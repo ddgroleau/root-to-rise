@@ -1,0 +1,74 @@
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: solid black 1px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.mobileToggleContainer {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navMenuDesktop {
+  display: none;
+}
+
+.navMenuMobile {
+  position: fixed;
+  border: solid black 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  right: 0;
+  top: 2.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.navMenuMobile a {
+  text-decoration: none;
+  padding: 0.25rem;
+  color: black;
+}
+
+@media (min-width: 900px) {
+  .navbar {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-right: 2rem;
+  }
+  .navMenuMobile {
+    display: none;
+  }
+  .mobileToggleContainer {
+    display: none;
+  }
+  .navMenuDesktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+  }
+  .navMenuDesktop a {
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem 1rem;
+  }
+}
+/*# sourceMappingURL=Navbar.module.css.map */

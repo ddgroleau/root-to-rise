@@ -1,0 +1,56 @@
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: solid black 1px;
+    justify-content: flex-end;
+}
+
+.mobileToggleContainer {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navMenuDesktop { 
+    display: none;
+}
+
+.navMenuMobile {
+    position: fixed;
+    border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    top: 2.5rem;
+    padding: 0.5rem 1rem;
+    a {
+        text-decoration: none;
+        padding: 0.25rem;
+        color: black;
+    }
+}
+
+@media (min-width: 900px) {
+    .navbar {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        padding-right: 2rem;
+    }
+    .navMenuMobile {
+        display: none;
+    }
+    .mobileToggleContainer {
+        display: none;
+    }
+    .navMenuDesktop {
+        display: flex;
+        position: relative;
+        a {
+            text-decoration: none;
+            color: black;
+            padding: 0.5rem 1rem;
+        }
+    }
+}

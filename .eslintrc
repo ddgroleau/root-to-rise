@@ -1,0 +1,15 @@
+{
+    "extends": "next",
+    "rules": {
+        "eqeqeq": ["error", "always"],
+        "max-len": ["warn", 120],
+        "func-names": "warn",
+        "indent": ["error", 4],
+        "import/no-unresolved": "warn",
+        "import/extensions": "warn",
+        "semi":"error",
+        "no-undef": "error",
+        "no-unused-vars":"error"
+    }
+  }
+  
