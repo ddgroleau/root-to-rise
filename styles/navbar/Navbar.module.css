@@ -26,7 +26,7 @@
 .logoContainer .logo {
   height: 100%;
   width: 100%;
-  background-image: url("../../public/logo-brand.svg");
+  background-image: url("/logo-brand.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
