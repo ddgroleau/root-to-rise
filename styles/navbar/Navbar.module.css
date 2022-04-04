@@ -1,0 +1,131 @@
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  background-color: #073221;
+  color: #7E7F1E;
+  padding-block: 1%;
+}
+
+.navIcon {
+  padding-block: 0.5rem;
+  padding-right: 2rem;
+}
+
+.navContent {
+  display: flex;
+  width: 100%;
+}
+
+.logoContainer {
+  height: max(7rem, 12vw);
+  width: max(7rem, 12vw);
+}
+.logoContainer .logo {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../public/logo-brand.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.brand {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: min(6rem, 7vw);
+  width: 100%;
+  text-align: center;
+}
+
+.mobileToggleContainer {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  right: 1rem;
+}
+
+.navMenuDesktop {
+  display: none;
+}
+
+.navMenuMobile {
+  position: fixed;
+  background-color: #F1F1F1;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  width: 100%;
+  top: 7rem;
+  padding: 0.5rem 1rem;
+}
+.navMenuMobile a {
+  padding: 0.25rem;
+  text-decoration: none;
+  color: #7E7F1E;
+  font-size: min(2rem, 1.5vw);
+  text-transform: uppercase;
+  padding-right: 3rem;
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1000px) {
+  .navbar {
+    flex-flow: row nowrap;
+  }
+
+  .navContent {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-left: max(3rem, 8vw);
+  }
+
+  .navMenuMobile {
+    display: none;
+  }
+
+  .mobileToggleContainer {
+    display: none;
+  }
+
+  .brand {
+    padding-bottom: min(1.5rem, 4vh);
+    justify-content: flex-start;
+  }
+
+  .navMenuDesktop {
+    display: flex;
+    position: relative;
+    margin: 0;
+  }
+  .navMenuDesktop a {
+    text-decoration: none;
+    color: #7E7F1E;
+    font-size: min(2rem, 1.5vw);
+    text-transform: uppercase;
+    padding-right: 3rem;
+  }
+
+  .iconContainer {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: auto;
+    bottom: 1rem;
+  }
+}
+@media (min-width: 1600px) {
+  .navContent {
+    padding-left: max(3rem, 13vw);
+  }
+}/*# sourceMappingURL=Navbar.module.css.map */
