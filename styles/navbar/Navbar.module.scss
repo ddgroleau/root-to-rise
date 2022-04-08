@@ -17,6 +17,8 @@
     background-color: $rtr-green-dark;
     color: $rtr-military-green;
     padding-block: 1%;
+    animation: fadeDown .3s ease-in-out;
+    z-index: 10;
 }
 
 .navIcon {
@@ -50,6 +52,7 @@
     font-size: min(6rem, 7vw);
     width: 100%;
     text-align: center;
+    color: $rtr-military-green;
 }
 
 .mobileToggleContainer {
@@ -125,5 +128,16 @@
 @media (min-width: 1600px) {
     .navContent {
         padding-left: max(3rem,13vw);
+    }
+}
+
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
     }
 }

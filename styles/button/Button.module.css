@@ -1,0 +1,10 @@
+.btn {
+  border: none;
+  background: none;
+  border: solid #405E5C 2px;
+  min-width: max(8rem, 40%);
+  font-size: max(1.2rem, 3vw);
+  white-space: nowrap;
+  border-radius: 20px;
+  padding-block: 0.5rem;
+}/*# sourceMappingURL=Button.module.css.map */

@@ -9,4 +9,13 @@ body {
   box-sizing: border-box;
   font-family: "Seasons", serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: #E0DDD7;
+}
+
+.specialChar {
+  font-family: serif;
+}
+
+* {
+  font-family: "Seasons", serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: #063723;
 }/*# sourceMappingURL=globals.css.map */
