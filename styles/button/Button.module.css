@@ -1,10 +1,43 @@
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
 .btn {
   border: none;
   background: none;
   border: solid #405E5C 2px;
   min-width: max(8rem, 40%);
-  font-size: max(1.2rem, 3vw);
+  font-size: max(1.5rem, 3vw);
   white-space: nowrap;
   border-radius: 20px;
-  padding-block: 0.5rem;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
 }/*# sourceMappingURL=Button.module.css.map */

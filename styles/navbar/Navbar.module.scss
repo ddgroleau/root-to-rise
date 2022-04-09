@@ -74,9 +74,11 @@
     flex-direction: column;
     left:0;
     width: 100%;
-    top: 7rem;
+    top: 6.5rem;
     padding: 0.5rem 1rem;
     a {
+        font-size: 2rem !important;
+        line-height: 3rem;
         padding: 0.25rem;
         @include navLink();
     }
@@ -85,6 +87,12 @@
 .iconContainer {
     display: flex;
     flex-direction: column;
+}
+
+@media (min-width: 700px) {
+    .navMenuMobile {
+        top: 7rem;
+    }
 }
 
 @media (min-width: 1000px) {
