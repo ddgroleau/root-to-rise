@@ -2,104 +2,19 @@
 
 .pageContainer {
     display: flex;
-    margin-top: 7.4rem;
-    justify-content: center;
-    height: 100%;
-    width: 100vw;
-}
-
-.hero {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 80vh;
-}
-
-.heroContent {
-    position: absolute;
-    display: flex;
+    margin-top: 7rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
-    background: linear-gradient(to left,rgba(255, 255, 255,0.4), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7));
-    padding: 1.5rem;
-    z-index: 2;
-    margin-bottom: 3rem;
-    max-height: min-content;
-    animation: slideInFromRight .4s ease-in-out, fadeIn .5s ease-in-out;
-    .tagline {
-        text-align: center;
-        margin: 0;
-        font-size: max(3rem, 7vw);
-        max-width: max(18rem, 80%);
-    }
+    height: max-content;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
-.btnContainer {
-    display: flex;
-    justify-content: center;
-    padding-top: 1rem;
-}
-
-.imgContainer {
-    min-height: 40rem;
-    min-width: 100vw;
-    animation: fadeIn .5s ease-in-out;
-    .img {
-        width: 100%;
-        height: 100%;
-        background-image: url("/home.png");
-        background-repeat: no-repeat;
-        background-size:cover;
-        background-position: center;
-    }
-}
 
 @media (min-width: 1000px) {
     .pageContainer {
         margin-top: 18vw;
         justify-content: center;
-    }
-    
-    .hero {
-        position: relative;
-        top: 0rem;
-        flex-direction: row;
-        justify-content: flex-start;
-        width: 95%;
-    }
-    
-    .heroContent {
-        position: relative;
-        background: none;
-        min-width: 40%;
-        min-height: 60%;
-        justify-content: space-between;
-        animation: fadeIn 1s ease-in-out, slideInFromLeft 1s ease-in-out;
-        .tagline {
-            max-width: none;
-            padding: 0 3vw;
-            font-size: min(6rem, 7vw);
-            text-align: left;
-            letter-spacing: normal;
-        }
-    }
-    
-    .btnContainer {
-        padding-left: 10vw;
-        width: 100%;
-        justify-content: flex-start;
-    }
-
-    .imgContainer {
-        height: 100%;
-        min-width: 50%;
-        animation: fadeIn 1s ease-in-out, slideInFromRight 1s ease-in-out;
-        .img {
-            background-size: 100%;
-        }
     }
 }

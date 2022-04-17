@@ -46,22 +46,19 @@
     transform: translateX(0vw);
   }
 }
-.pageContainer {
+.featuredProducts {
   display: flex;
-  margin-top: 7rem;
-  justify-content: center;
-  align-items: center;
+  padding-top: 1rem;
   flex-direction: column;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  width: 100vw;
-  overflow-x: hidden;
+  align-items: center;
 }
 
-@media (min-width: 1000px) {
-  .pageContainer {
-    margin-top: 18vw;
-    justify-content: center;
-  }
-}/*# sourceMappingURL=Home.module.css.map */
+.title {
+  font-size: max(1.75rem, 3vw);
+}
+
+.productsContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}/*# sourceMappingURL=FeaturedProducts.module.css.map */

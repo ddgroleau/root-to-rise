@@ -30,6 +30,22 @@
     transform: translateX(0vw);
   }
 }
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
 .btn {
   border: none;
   background: none;

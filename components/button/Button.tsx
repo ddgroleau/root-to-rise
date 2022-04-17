@@ -1,12 +1,12 @@
 import React from "react";
-import styles from '../../styles/button/Button.module.css';
+import styles from './Button.module.css';
 
-type buttonProps = {
+type ButtonProps = {
     text:string;
     onClick:React.MouseEventHandler|undefined
 }
 
-const Button = ({text, onClick}:buttonProps) => {
+const Button = ({text, onClick}:ButtonProps) => {
     return (
         <button onClick={onClick} className={styles.btn}>
             {text}

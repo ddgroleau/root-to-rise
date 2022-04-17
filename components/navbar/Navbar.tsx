@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import styles from "../../styles/navbar/Navbar.module.css";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
     const [isToggled, setIsToggled] = useState(false);

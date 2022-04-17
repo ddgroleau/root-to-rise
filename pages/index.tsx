@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
-import Button from '../components/button/Button';
+import FeaturedProducts from '../components/featured-products/FeaturedProducts';
+import Hero from '../components/hero/Hero';
 import Layout from '../components/layout/Layout';
 import styles from '../styles/home/Home.module.css';
 
@@ -9,24 +10,8 @@ const Home: NextPage = () => {
             metaDescription="All natural tinctures, salves and herbal remedies" 
             pageTitle="Root to Rise Botanicals">
             <div className={styles.pageContainer} >
-                <section className={styles.hero}>
-                   
-                    <div className={styles.heroContent}>
-                        <p className={styles.tagline}>
-                            Earth<span className="specialChar">'</span>s 
-                            Approach to Self<span className="specialChar">-</span>Care
-                        </p>
-                        <div className={styles.btnContainer}>
-                            <Button text="Shop Now" onClick={()=>{}} />
-                        </div>
-                    </div>
- 
-
-                    <div className={styles.imgContainer}>
-                        <div className={styles.img}></div>
-                    </div>
-                    
-                </section>
+                <Hero/>
+                <FeaturedProducts />
             </div>
         </Layout>
     );
