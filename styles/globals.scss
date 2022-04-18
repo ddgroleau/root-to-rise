@@ -13,6 +13,7 @@ body {
   font-family:  'Seasons', serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: $rtr-tan;
+  overflow-x: hidden;
 }
 
 .specialChar {
@@ -24,3 +25,5 @@ body {
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: $rtr-green;
 }
+
+

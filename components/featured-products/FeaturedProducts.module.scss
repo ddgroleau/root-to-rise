@@ -5,14 +5,48 @@
     padding-top: 1rem;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .title {
-    font-size: max(1.75rem, 3vw);
+    font-size: max(2rem, 4vw);
+    white-space: nowrap;
+    text-align: center;
 }
 
 .productsContainer {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%;
 }
+
+.card {
+    padding: 0.5rem;
+}
+
+.productTitle {
+    font-size: max(1.5rem, 2vw);
+    text-align: center;
+    max-width: 20rem;
+}
+
+.fadeIn {
+    animation: fadeIn .75s ease-in-out forwards;
+  }
+
+.hidden {
+    width: 100%;
+    opacity: 0;
+}
+  
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem);
+        -webkit-transform: translateY(10rem);
+    }
+    100% {
+        opacity: 1;
+    }
+  }

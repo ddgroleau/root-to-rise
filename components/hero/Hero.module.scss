@@ -21,7 +21,7 @@
     z-index: 2;
     margin-bottom: 3rem;
     max-height: min-content;
-    animation: slideInFromRight .4s ease-in-out, fadeIn .5s ease-in-out;
+    animation: slideInFromRight .7s ease-in-out, fadeIn .8s ease-in-out;
     .tagline {
         text-align: center;
         margin: 0;
@@ -38,7 +38,7 @@
 
 .imgContainer {
     min-height: 40rem;
-    min-width: 100vw;
+    min-width: 100%;
     animation: fadeIn .5s ease-in-out;
     .img {
         width: 100%;

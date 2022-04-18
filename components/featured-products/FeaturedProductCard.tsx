@@ -11,7 +11,7 @@ export const FeaturedProductCard = ({image, productName}:CardProps) => {
     return (
         <article className={styles.card}>
             <Image src={image} height={400} width={325} alt="Product Image"/>
-            <p>{productName}</p>
+            <p className={styles.productTitle}>{productName}</p>
         </article>
     );
 };

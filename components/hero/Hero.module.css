@@ -69,8 +69,8 @@
   max-height: -webkit-min-content;
   max-height: -moz-min-content;
   max-height: min-content;
-  -webkit-animation: slideInFromRight 0.4s ease-in-out, fadeIn 0.5s ease-in-out;
-          animation: slideInFromRight 0.4s ease-in-out, fadeIn 0.5s ease-in-out;
+  -webkit-animation: slideInFromRight 0.7s ease-in-out, fadeIn 0.8s ease-in-out;
+          animation: slideInFromRight 0.7s ease-in-out, fadeIn 0.8s ease-in-out;
 }
 .heroContent .tagline {
   text-align: center;
@@ -87,7 +87,7 @@
 
 .imgContainer {
   min-height: 40rem;
-  min-width: 100vw;
+  min-width: 100%;
   -webkit-animation: fadeIn 0.5s ease-in-out;
           animation: fadeIn 0.5s ease-in-out;
 }
