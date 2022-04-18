@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import BrandBulletin from '../components/brand-bulletin/BrandBulletin';
 import FeaturedProducts from '../components/featured-products/FeaturedProducts';
 import Hero from '../components/hero/Hero';
 import Layout from '../components/layout/Layout';
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
             <div className={styles.pageContainer} >
                 <Hero/>
                 <FeaturedProducts />
+                <BrandBulletin />
             </div>
         </Layout>
     );

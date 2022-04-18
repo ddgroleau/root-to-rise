@@ -11,3 +11,9 @@
     padding: 1rem 1.5rem;
     text-transform: uppercase;
 }
+
+.btn:hover {
+    background-color: $rtr-seagreen;
+    color: $rtr-tan;
+    transition: all .2s ease-in-out;
+}

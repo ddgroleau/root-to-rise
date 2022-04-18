@@ -56,4 +56,10 @@
   border-radius: 20px;
   padding: 1rem 1.5rem;
   text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: #405E5C;
+  color: #E0DDD7;
+  transition: all 0.2s ease-in-out;
 }/*# sourceMappingURL=Button.module.css.map */
