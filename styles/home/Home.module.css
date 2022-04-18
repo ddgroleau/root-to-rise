@@ -56,7 +56,7 @@
   height: -moz-max-content;
   height: max-content;
   width: 100%;
-  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 @media (min-width: 1000px) {
