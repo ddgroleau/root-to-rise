@@ -46,24 +46,20 @@
     transform: translateX(0vw);
   }
 }
-@font-face {
-  font-family: "Seasons";
-  src: url("./fonts/Fontspring-DEMO-theseasons-reg.otf");
-}
-html,
-body {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Seasons", serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #E0DDD7;
-  overflow-x: hidden;
+.btn {
+  border: none;
+  background: none;
+  border: solid #405E5C 2px;
+  min-width: max(8rem, 40%);
+  font-size: max(1.5rem, 3vw);
+  white-space: nowrap;
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
 }
 
-.specialChar {
-  font-family: serif;
-}
-
-* {
-  font-family: "Seasons", serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}/*# sourceMappingURL=globals.css.map */
+.btn:hover {
+  background-color: #405E5C;
+  color: #E0DDD7;
+  transition: all 0.2s ease-in-out;
+}/*# sourceMappingURL=Button.module.css.map */

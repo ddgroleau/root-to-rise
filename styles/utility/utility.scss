@@ -1,0 +1,35 @@
+$rtr-military-green: #7E7F1E;
+$rtr-green-dark: #073221;
+$rtr-tan: #E0DDD7;
+$rtr-eggshell: #F1F1F1;
+$rtr-seagreen: #405E5C;
+$rtr-olive-drab: #BDB048;
+$rtr-brown-clay: #99634E;
+$rtr-green: #063723;
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(0vw);
+    }
+}

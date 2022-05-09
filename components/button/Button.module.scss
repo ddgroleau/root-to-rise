@@ -1,0 +1,19 @@
+@import '../../styles/utility/utility.scss';
+
+.btn {
+    border: none;
+    background: none;
+    border: solid $rtr-seagreen 2px;
+    min-width: max(8rem,40%);
+    font-size: max(1.5rem, 3vw);
+    white-space: nowrap;
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: $rtr-seagreen;
+    color: $rtr-tan;
+    transition: all .2s ease-in-out;
+}

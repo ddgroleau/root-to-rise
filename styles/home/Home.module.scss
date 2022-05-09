@@ -1,0 +1,22 @@
+@import '../utility/utility.scss';
+
+.pageContainer {
+    display: flex;
+    margin-top: 7rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: max-content;
+    width: 100%;
+    overflow-x: hidden;
+    height: max-content;
+    margin-bottom: 3rem;
+}
+
+
+@media (min-width: 1000px) {
+    .pageContainer {
+        margin-top: 18vw;
+        justify-content: center;
+    }
+}

@@ -1,20 +1,105 @@
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
 .navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: fixed;
   top: 0;
   width: 100%;
-  border-bottom: solid black 1px;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  align-items: center;
+  background-color: #073221;
+  color: #7E7F1E;
+  padding-block: 1%;
+  -webkit-animation: fadeDown 0.3s ease-in-out;
+          animation: fadeDown 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.navIcon {
+  padding-block: 0.5rem;
+  padding-right: 2rem;
+}
+
+.navContent {
+  display: flex;
+  width: 100%;
+}
+
+.logoContainer {
+  height: max(7rem, 12vw);
+  width: max(7rem, 12vw);
+}
+.logoContainer .logo {
+  height: 100%;
+  width: 100%;
+  background-image: url("/logo-brand.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.brand {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: min(6rem, 7vw);
+  width: 100%;
+  text-align: center;
+  color: #7E7F1E;
 }
 
 .mobileToggleContainer {
   background: none;
   border: none;
   cursor: pointer;
+  position: relative;
+  right: 1rem;
 }
 
 .navMenuDesktop {
@@ -23,52 +108,103 @@
 
 .navMenuMobile {
   position: fixed;
-  border: solid black 1px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: #F1F1F1;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  right: 0;
-  top: 2.5rem;
+  flex-direction: column;
+  left: 0;
+  width: 100%;
+  top: 6.5rem;
   padding: 0.5rem 1rem;
 }
-
 .navMenuMobile a {
-  text-decoration: none;
+  font-size: 2rem !important;
+  line-height: 3rem;
   padding: 0.25rem;
-  color: black;
+  text-decoration: none;
+  color: #7E7F1E;
+  font-size: min(2rem, 1.5vw);
+  text-transform: uppercase;
+  padding-right: 3rem;
 }
 
-@media (min-width: 900px) {
-  .navbar {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    padding-right: 2rem;
+.iconContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 700px) {
+  .navMenuMobile {
+    top: 7rem;
   }
+}
+@media (min-width: 1000px) {
+  .navbar {
+    flex-flow: row nowrap;
+  }
+
+  .navContent {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-left: max(3rem, 8vw);
+  }
+
   .navMenuMobile {
     display: none;
   }
+
   .mobileToggleContainer {
     display: none;
   }
+
+  .brand {
+    padding-bottom: min(1.5rem, 4vh);
+    justify-content: flex-start;
+  }
+
   .navMenuDesktop {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     position: relative;
+    margin: 0;
   }
   .navMenuDesktop a {
     text-decoration: none;
-    color: black;
-    padding: 0.5rem 1rem;
+    color: #7E7F1E;
+    font-size: min(2rem, 1.5vw);
+    text-transform: uppercase;
+    padding-right: 3rem;
+  }
+
+  .iconContainer {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: auto;
+    bottom: 1rem;
   }
 }
-/*# sourceMappingURL=Navbar.module.css.map */
+@media (min-width: 1600px) {
+  .navContent {
+    padding-left: max(3rem, 13vw);
+  }
+}
+@-webkit-keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}/*# sourceMappingURL=Navbar.module.css.map */
