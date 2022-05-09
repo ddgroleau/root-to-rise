@@ -56,7 +56,7 @@
   height: -moz-max-content;
   height: max-content;
   width: 100%;
-  overflow-y: hidden;
+  overflow-x: hidden;
   height: max-content;
   margin-bottom: 3rem;
 }

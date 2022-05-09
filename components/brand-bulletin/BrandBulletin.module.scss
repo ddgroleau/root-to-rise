@@ -106,6 +106,7 @@
         position: relative;
         margin: 0;
         background-color: $rtr-green;
+        max-width: 50%;
         a {
             color: $rtr-olive-drab;
             font-size: max(1.5rem, 3vw);
