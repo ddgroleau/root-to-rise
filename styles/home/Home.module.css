@@ -52,12 +52,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  width: 100%;
-  overflow-x: hidden;
-  height: max-content;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
   margin-bottom: 3rem;
 }
 

@@ -1,9 +1,11 @@
 import Head from 'next/head';
+import Footer from '../footer/Footer';
 import Navbar from '../navbar/Navbar';
+import styles from './Layout.module.css';
 
 const Layout = ({pageTitle, metaDescription, children}:any) => {
     return (
-        <div>
+        <div className={styles.container}>
             <Head>
                 <title>{pageTitle}</title>
                 <meta name="description" content={metaDescription} />
@@ -14,6 +16,7 @@ const Layout = ({pageTitle, metaDescription, children}:any) => {
             <main>
                 {children}
             </main>
+            <Footer/>
         </div>
     );
 };
