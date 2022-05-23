@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Deploy to Heroku Staging:
+  deploy-heroku-stage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
