@@ -15,11 +15,10 @@ const ComingSoon = () => {
         width: "100vw", 
         justifyContent: "center", 
         height: "100vh", 
-        textAlign: "center"
     };
     return (
         <Layout>
-            <div style={container}>
+            <div style={{...container, textAlign: "center"}}>
                 <h1 style={styles}>
                     This page is under construction, but will be coming soon<SpecialChar>!</SpecialChar>
                     <Link href="/" passHref>
