@@ -23,27 +23,27 @@ const Navbar = () => {
                     <Image width="75" height="75" src="/hamburger.svg" alt="Mobile toggle icon."/>
                 </button>
                 <menu className={isToggled ? styles.navMenuMobile : styles.navMenuDesktop}>
-                    <Link href={"/"}>Shop</Link>
-                    <Link href={"/"}>About</Link>
-                    <Link href={"/"}>Yoga</Link>
-                    <Link href={"/"}>Contact</Link>
-                    <Link href={"/"}>Blog</Link>
-                    <Link href={"/"}>Wholesale</Link>
+                    <Link href={"/coming-soon"}>Shop</Link>
+                    <Link href={"/coming-soon"}>About</Link>
+                    <Link href={"/coming-soon"}>Yoga</Link>
+                    <Link href={"/coming-soon"}>Contact</Link>
+                    <Link href={"/coming-soon"}>Blog</Link>
+                    <Link href={"/coming-soon"}>Wholesale</Link>
                     <div className={styles.iconContainer}>
                         <div className={styles.navIcon}>
-                            <Link href={"/"} passHref>
+                            <Link href={"/coming-soon"} passHref>
                                 <Image width={ICON_DIMENSION} height={ICON_DIMENSION} 
                                     src="/icon-person.svg" alt="Account Icon."/>
                             </Link>
                         </div>
                         <div className={styles.navIcon}>
-                            <Link href={"/"} passHref>
+                            <Link href={"/coming-soon"} passHref>
                                 <Image width={ICON_DIMENSION} height={ICON_DIMENSION} 
                                     src="/icon-instagram.svg" alt="Instagram Icon."/>
                             </Link>
                         </div>
                         <div className={styles.navIcon}>
-                            <Link href={"/"} passHref>
+                            <Link href={"/coming-soon"} passHref>
                                 <Image width={ICON_DIMENSION} height={ICON_DIMENSION} 
                                     src="/icon-cart.svg" alt="Cart Icon."/>
                             </Link>

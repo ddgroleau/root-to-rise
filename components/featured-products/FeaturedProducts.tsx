@@ -34,7 +34,7 @@ const FeaturedProducts = () => {
     ];
 
     const handleClick = () => {
-        router.push("/products");
+        router.push("/coming-soon");
     };
 
     return (

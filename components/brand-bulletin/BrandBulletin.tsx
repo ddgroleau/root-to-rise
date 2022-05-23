@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import SpecialChar from '../special-char/SpecialChar';
 import styles from './BrandBulletin.module.css';
 
 const BrandBulletin = () => {
@@ -12,25 +13,33 @@ const BrandBulletin = () => {
                 <div className={styles.heroText}>
                     <p className={styles.tagline}>Getting to the Root of it All</p>
                     <p className={styles.subheading}>
-                        Crafted with Mother Nature<span className="specialChar">'</span>s most beautiful creations
+                        Crafted with Mother Nature<SpecialChar>'</SpecialChar>s most beautiful creations
                     </p>
-                    <Link href="/about">Learn More</Link>
+                    <Link href="/coming-soon">Learn More</Link>
                 </div>
             </div>
             <div className={styles.bulletinDescription}>
                 <span className={styles.descriptionTitle}>Our Promises</span>
                 <div className={styles.description}>
                     <div className={styles.descriptionText}>
-                        <span className={styles.descriptionSubtitle}>Cruelty Free, Vegetarian + Vegan*-Friendly</span>
+                        <span className={styles.descriptionSubtitle}>
+                            Cruelty Free<SpecialChar>,</SpecialChar> Vegetarian <SpecialChar>+</SpecialChar> Vegan
+                            <SpecialChar>*-</SpecialChar>Friendly
+                        </span>
                         <p>
-                        We’re vegetarians here, so we’ll keep it that way with all of our products. 
+                        We<SpecialChar>'</SpecialChar>re 
+                        vegetarians here, so 
+                        we<SpecialChar>'</SpecialChar>ll keep it that way with all of our products. 
                         Protecting animals and their welfare is our top priority, and always will be
                         </p>
                     </div>
                     <div className={styles.descriptionText}>
-                        <span className={styles.descriptionSubtitle}>Hand-Crafted</span>
+                        <span className={styles.descriptionSubtitle}>Hand<SpecialChar>-</SpecialChar>Crafted</span>
                         <p>
-                        Selected, blended, hand crafted & poured products in Denver, Colorado. 
+                        Selected<SpecialChar>,</SpecialChar> blended<SpecialChar>'</SpecialChar> 
+                        hand crafted 
+                            <SpecialChar>&</SpecialChar> 
+                        poured products in Denver<SpecialChar>,</SpecialChar> Colorado. 
                         Everything you see was made with love by Rachel herself 
                         </p>
                     </div>
