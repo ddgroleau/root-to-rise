@@ -1,0 +1,136 @@
+@import '../../styles/utility/utility.scss';
+
+.bulletinContainer {
+    display: flex;
+    flex-direction: column;
+    color: $rtr-eggshell;
+    width: 100%;
+    height: auto;
+    background-color: $rtr-green;
+    margin-top: 3rem;
+    height: 100%;
+}
+
+.imgContainer {
+    height: 70vh;
+    min-height: 100%;
+    min-width: 100%;
+    .img {
+        width: 100%;
+        height: 100%;
+        background-image: url("/bulletin.png");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: center;
+    }
+}
+
+.heroText {
+    position: absolute;
+    width: 100%;
+    margin-top: -65vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    background-color: rgba(255, 255, 255, 0.15);
+    a {
+        color: $rtr-eggshell;
+        font-size: max(1.5rem, 3vw);
+    }
+}
+
+.tagline {
+    font-size: max(2.5rem, 5vw);
+    max-width: 90%;
+    margin: 0;
+    padding: 0;
+    color: $rtr-eggshell;
+}
+
+.subheading {
+    font-size: max(1.5rem, 3vw);
+    max-width: 80%;
+    margin: 0;
+    padding-block: 2rem;
+    color: $rtr-eggshell;
+}
+
+.bulletinDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $rtr-olive-drab;
+    padding: 0 1rem;
+    width: 100%;
+}
+.description {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.descriptionTitle {
+    font-size: max(1.5rem, 3vw);
+    margin-block: 1rem;
+}
+
+.descriptionSubtitle {
+    font-size: max(1.2rem, 2vw);
+}
+
+.descriptionText {
+    max-width: 40rem;
+}
+
+@media (min-width: 1000px) {
+    .bulletinHero {
+        display: flex;
+        width: 100%;
+        max-width: 100vw;
+        padding-block: 2.5%;
+        max-height: 70vh;
+        margin-left: 2.5%;
+        z-index: 3;
+    }
+    .imgContainer {
+        display: flex;
+        min-width: 33%;
+        .img {
+            background-size:cover;
+            margin-left: 2.5%;
+        }
+    }
+    .heroText {
+        display: flex;
+        position: relative;
+        margin: 0;
+        background-color: $rtr-green;
+        max-width: 50%;
+        a {
+            color: $rtr-olive-drab;
+            font-size: max(1.5rem, 3vw);
+        }
+    }
+    .heroText, .tagline, .subheading {
+        color: $rtr-olive-drab;
+    }
+    .description {
+        flex-direction: row;
+        gap: 5%;
+        max-width: 90%;
+    }
+    .bulletinDescription {
+        padding: 1rem 5%;
+        align-items: flex-start;
+    }
+    .descriptionTitle {
+        margin-bottom: 2.5%;
+    }
+    .descriptionText {
+        max-width: 28%;
+        p {
+            font-size: max(1.2rem, 1.2vw);
+        }
+    }
+}

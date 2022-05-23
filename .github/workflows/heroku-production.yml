@@ -2,12 +2,12 @@ name: Push docker container to Heroku
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ master ]
 
   workflow_dispatch:
 
 jobs:
-  Deploy to Heroku (Staging):
+  Deploy to Heroku (Prod):
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,9 +20,9 @@ jobs:
       - name: Build Container
         env: 
             HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:push web -a root-to-rise-staging
+        run: heroku container:push web -a root-to-rise
 
       - name: Release Container
         env: 
             HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:release web -a root-to-rise-staging
+        run: heroku container:release web -a root-to-rise

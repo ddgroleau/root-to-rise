@@ -1,16 +1,67 @@
+@import '../../styles/utility/utility.scss';
+
+@mixin navLink {
+    text-decoration: none;
+    color: $rtr-military-green;
+    font-size: min(2rem, 1.5vw);
+    text-transform: uppercase;
+    padding-right: 3rem;
+}
+
 .navbar {
     display: flex;
     position: fixed;
     top: 0;
     width: 100%;
-    border-bottom: solid black 1px;
-    justify-content: flex-end;
+    align-items: center;
+    background-color: $rtr-green-dark;
+    color: $rtr-military-green;
+    padding-block: 1%;
+    animation: fadeDown .3s ease-in-out;
+    z-index: 10;
+}
+
+.navIcon {
+    padding-block: 0.5rem;
+    padding-right: 2rem;
+}
+
+.navContent {
+    display: flex;
+    width: 100%;
+}
+
+.logoContainer {
+    height: max(7rem,12vw);
+    width: max(7rem,12vw);
+    cursor: pointer;
+    .logo {
+        height: 100%;
+        width: 100%;
+        background-image: url("/logo-brand.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+}
+
+.brand {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: min(6rem, 7vw);
+    width: 100%;
+    text-align: center;
+    color: $rtr-military-green;
 }
 
 .mobileToggleContainer {
     background: none;
     border: none;
     cursor: pointer;
+    position: relative;
+    right: 1rem;
 }
 
 .navMenuDesktop { 
@@ -19,24 +70,41 @@
 
 .navMenuMobile {
     position: fixed;
-    border: solid black 1px;
+    background-color: $rtr-eggshell;
     display: flex;
     flex-direction: column;
-    right: 0;
-    top: 2.5rem;
+    left:0;
+    width: 100%;
+    top: 6.5rem;
     padding: 0.5rem 1rem;
     a {
-        text-decoration: none;
+        font-size: 2rem !important;
+        line-height: 3rem;
         padding: 0.25rem;
-        color: black;
+        @include navLink();
     }
 }
 
-@media (min-width: 900px) {
+.iconContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 700px) {
+    .navMenuMobile {
+        top: 7rem;
+    }
+}
+
+@media (min-width: 1000px) {
     .navbar {
-        flex-direction: row-reverse;
-        justify-content: flex-start;
-        padding-right: 2rem;
+        flex-flow: row nowrap;
+    }
+    .navContent {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        padding-left: max(3rem,8vw);
     }
     .navMenuMobile {
         display: none;
@@ -44,13 +112,41 @@
     .mobileToggleContainer {
         display: none;
     }
+    .brand {
+        padding-bottom: min(1.5rem,4vh);
+        justify-content: flex-start;
+    }
     .navMenuDesktop {
         display: flex;
         position: relative;
+        margin: 0;
         a {
-            text-decoration: none;
-            color: black;
-            padding: 0.5rem 1rem;
+            @include navLink();
         }
+    }
+    .iconContainer {
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        margin-left: auto;
+        bottom: 1rem;
+    }
+
+}
+
+@media (min-width: 1600px) {
+    .navContent {
+        padding-left: max(3rem,13vw);
+    }
+}
+
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
     }
 }
