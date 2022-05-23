@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-// import Footer from '../footer/Footer';
 import Navbar from '../navbar/Navbar';
 import styles from './Layout.module.css';
 
@@ -17,7 +16,6 @@ const Layout = ({pageTitle, metaDescription, children}:any) => {
             <main>
                 {children}
             </main>
-            {/* <Footer/> */}
             <div>
                 {new Date().getFullYear()} | <Link href="https://www.linkedin.com/in/dangroleau/">Dan Groleau</Link>
             </div>
