@@ -36,10 +36,9 @@ const BrandBulletin = () => {
                     <div className={styles.descriptionText}>
                         <span className={styles.descriptionSubtitle}>Hand<SpecialChar>-</SpecialChar>Crafted</span>
                         <p>
-                        Selected<SpecialChar>,</SpecialChar> blended<SpecialChar>'</SpecialChar> 
-                        hand crafted 
-                            <SpecialChar>&</SpecialChar> 
-                        poured products in Denver<SpecialChar>,</SpecialChar> Colorado. 
+                        Selected<SpecialChar>,</SpecialChar> blended
+                            <SpecialChar>,</SpecialChar> hand crafted <SpecialChar>&</SpecialChar> poured 
+                        products in Denver<SpecialChar>,</SpecialChar> Colorado. 
                         Everything you see was made with love by Rachel herself 
                         </p>
                     </div>
