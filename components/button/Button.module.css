@@ -50,8 +50,8 @@
   border: none;
   background: none;
   border: solid #405E5C 2px;
-  min-width: max(8rem, 40%);
-  font-size: max(1.5rem, 3vw);
+  min-width: max(8rem, 35%);
+  font-size: max(1.5rem, 2vw);
   white-space: nowrap;
   border-radius: 20px;
   padding: 1rem 1.5rem;

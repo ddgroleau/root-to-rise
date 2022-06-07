@@ -6,7 +6,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 80vh;
+    height: min(70vh, 40rem);
+    margin-bottom: max(3rem,4vw);
 }
 
 .heroContent {
@@ -25,8 +26,8 @@
     .tagline {
         text-align: center;
         margin: 0;
-        font-size: max(3rem, 7vw);
-        max-width: max(18rem, 80%);
+        font-size: max(3rem, 6vw);
+        max-width: max(18rem, 90%);
     }
 }
 
@@ -37,9 +38,9 @@
 }
 
 .imgContainer {
-    min-height: 40rem;
     min-width: 100%;
     animation: fadeIn .5s ease-in-out;
+    min-height: 40rem;
     .img {
         width: 100%;
         height: 100%;
@@ -53,30 +54,28 @@
 @media (min-width: 1000px) {
     .hero {
         position: relative;
-        top: 0rem;
         flex-direction: row;
         justify-content: flex-start;
-        width: 95%;
+        width: 80%;
     }
     
     .heroContent {
         position: relative;
         background: none;
-        min-width: 40%;
-        min-height: 60%;
+        min-width: 50%;
         justify-content: space-between;
         animation: fadeIn 1s ease-in-out, slideInFromLeft 1s ease-in-out;
         .tagline {
             max-width: none;
-            padding: 0 3vw;
-            font-size: min(6rem, 7vw);
+            padding: 2vw 3vw;
+            font-size: max(5rem, 4vw);
             text-align: left;
             letter-spacing: normal;
         }
     }
     
     .btnContainer {
-        padding-left: 10vw;
+        padding-left: max(3rem,10vw);
         width: 100%;
         justify-content: flex-start;
     }
@@ -87,6 +86,9 @@
         animation: fadeIn 1s ease-in-out, slideInFromRight 1s ease-in-out;
         .img {
             background-size: 100%;
+            background-position:contain;
+            max-width: 35rem;
+            min-height: min(42rem,95%);
         }
     }
 }

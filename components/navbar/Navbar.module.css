@@ -71,8 +71,9 @@
 }
 
 .logoContainer {
-  height: max(7rem, 12vw);
-  width: max(7rem, 12vw);
+  height: max(6rem, 6vw);
+  width: max(6rem, 6vw);
+  cursor: pointer;
 }
 .logoContainer .logo {
   height: 100%;
@@ -88,7 +89,7 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  font-size: min(6rem, 7vw);
+  font-size: max(2rem, 2.5vw);
   width: 100%;
   text-align: center;
   color: #7E7F1E;
@@ -113,18 +114,17 @@
   flex-direction: column;
   left: 0;
   width: 100%;
-  top: 6.5rem;
+  top: 5.5rem;
   padding: 0.5rem 1rem;
 }
 .navMenuMobile a {
-  font-size: 2rem !important;
+  font-size: 1.5rem !important;
   line-height: 3rem;
   padding: 0.25rem;
   text-decoration: none;
   color: #7E7F1E;
   font-size: min(2rem, 1.5vw);
   text-transform: uppercase;
-  padding-right: 3rem;
 }
 
 .iconContainer {
@@ -134,10 +134,14 @@
 
 @media (min-width: 700px) {
   .navMenuMobile {
-    top: 7rem;
+    top: 6rem;
   }
 }
 @media (min-width: 1000px) {
+  .navIcon {
+    padding: 0;
+  }
+
   .navbar {
     flex-flow: row nowrap;
   }
@@ -145,8 +149,8 @@
   .navContent {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 80%;
-    padding-left: max(3rem, 8vw);
   }
 
   .navMenuMobile {
@@ -159,33 +163,25 @@
 
   .brand {
     padding-bottom: min(1.5rem, 4vh);
-    justify-content: flex-start;
   }
 
   .navMenuDesktop {
     display: flex;
     position: relative;
     margin: 0;
+    gap: 3rem;
   }
   .navMenuDesktop a {
     text-decoration: none;
     color: #7E7F1E;
     font-size: min(2rem, 1.5vw);
     text-transform: uppercase;
-    padding-right: 3rem;
   }
 
   .iconContainer {
-    position: relative;
     display: flex;
     flex-flow: row nowrap;
-    margin-left: auto;
-    bottom: 1rem;
-  }
-}
-@media (min-width: 1600px) {
-  .navContent {
-    padding-left: max(3rem, 13vw);
+    gap: 1.5rem;
   }
 }
 @-webkit-keyframes fadeDown {

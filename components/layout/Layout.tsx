@@ -13,7 +13,7 @@ const Layout = ({pageTitle, metaDescription, children}:any) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navbar/>
-            <main>
+            <main className={styles.main}>
                 {children}
             </main>
             <div>
