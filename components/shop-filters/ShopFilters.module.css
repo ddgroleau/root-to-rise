@@ -1,0 +1,89 @@
+@charset "UTF-8";
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: max(1rem, 1vw);
+}
+
+.controls::after {
+  content: "Filters 🌻 ↴";
+  background-color: #99634E;
+  width: 100%;
+  padding: 0.25rem;
+  display: flex;
+  justify-content: center;
+  color: #E0DDD7;
+  font-size: 1.2rem;
+  word-spacing: 1rem;
+  cursor: pointer;
+}
+
+.btnContainer {
+  display: none;
+}
+.btnContainer button {
+  font-size: max(1.2rem, 1vw);
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  min-width: 5rem;
+}/*# sourceMappingURL=ShopFilters.module.css.map */

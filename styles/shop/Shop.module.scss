@@ -1,0 +1,14 @@
+@import '../utility/utility.scss';
+
+.pageContainer {
+    display: flex;
+    margin-top: max(6.25rem, 15vw);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    width: 100%;
+    height: max-content;
+    min-height: max-content;
+    margin-bottom: 3rem;
+}

@@ -23,7 +23,7 @@ const Navbar = () => {
                     <Image width="75" height="75" src="/hamburger.svg" alt="Mobile toggle icon."/>
                 </button>
                 <menu className={isToggled ? styles.navMenuMobile : styles.navMenuDesktop}>
-                    <Link href={"/coming-soon"}>Shop</Link>
+                    <Link href={"/shop"}>Shop</Link>
                     <Link href={"/coming-soon"}>About</Link>
                     <Link href={"/coming-soon"}>Yoga</Link>
                     <Link href={"/coming-soon"}>Contact</Link>

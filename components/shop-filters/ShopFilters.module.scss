@@ -1,0 +1,42 @@
+@import '../../styles/utility/utility.scss';
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: max(1rem, 1vw);
+}
+
+.controls::after {
+    content: "Filters 🌻 ↴";
+    background-color: $rtr-brown-clay;
+    width: 100%;
+    padding: 0.25rem;
+    display: flex;
+    justify-content: center;
+    color: $rtr-tan;
+    font-size: 1.2rem;
+    word-spacing: 1rem;
+    cursor: pointer;
+}
+
+.btnContainer {
+    display: none;
+    button {
+        font-size: max(1.2rem, 1vw);
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 0.5rem;
+        min-width: 5rem;
+    }
+}
