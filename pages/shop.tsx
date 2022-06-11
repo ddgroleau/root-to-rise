@@ -14,12 +14,16 @@ const Shop: NextPage = () => {
         if(isSuccess) setProducts(response.data);
     },[products]);
 
+    const handleClick = ()=> {
+        //
+    };
+
     return (
         <Layout 
             metaDescription="All natural tinctures, salves and herbal remedies" 
             pageTitle="Root to Rise Botanicals">
             <section className={styles.pageContainer}>
-                <ShopFilters/>
+                <ShopFilters onClick={handleClick}/>
             </section>
         </Layout>
     );

@@ -16,7 +16,7 @@ const Layout = ({pageTitle, metaDescription, children}:any) => {
             <main className={styles.main}>
                 {children}
             </main>
-            <div style={{marginLeft:"5%"}}>
+            <div style={{marginLeft:"5%", position:"fixed", bottom: "0"}}>
                 {new Date().getFullYear()} | <Link href="https://www.linkedin.com/in/dangroleau/">Dan Groleau</Link>
             </div>
         </div>

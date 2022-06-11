@@ -6,37 +6,107 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    z-index: 3;
 }
 
-.controls {
+.mobileControls {
+    position: fixed;
+    bottom: 0;
     display: flex;
-    justify-content: center;
     width: 100%;
-    flex-flow: column nowrap;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    background-color: $rtr-green-dark;
+    color: $rtr-tan;
+    padding: 0.25rem;
+    font-size: 1.2rem;
     gap: max(1rem, 1vw);
+    cursor: pointer;
+    z-index: 2;
 }
 
-.controls::after {
-    content: "Filters 🌻 ↴";
-    background-color: $rtr-brown-clay;
-    width: 100%;
-    padding: 0.25rem;
+.controlsText {
     display: flex;
-    justify-content: center;
-    color: $rtr-tan;
-    font-size: 1.2rem;
-    word-spacing: 1rem;
-    cursor: pointer;
+    position: relative;
+    align-items: center;
+}
+
+.openFilters {
+    display: flex;
+    visibility: visible;
+    position: fixed;
+    bottom: 0;
+    flex-flow: row wrap;
+    gap: 1rem;
+    width: 100%;
+    padding-left: 10%;
+    padding-top: 1.5rem;
+    padding-bottom: 5rem;
+    background-color: $rtr-green-dark;
+    z-index: 1;
+}
+
+.closeFilters {
+    visibility: collapse;
 }
 
 .btnContainer {
-    display: none;
     button {
         font-size: max(1.2rem, 1vw);
         display: flex;
         align-items: center;
-        padding: 0.25rem 0.5rem;
+        padding: 0.5rem 1rem;
         min-width: 5rem;
+        color: $rtr-tan;
+    }
+    select {
+        color: $rtr-tan;
+        font-size: max(1.2rem, 1vw);
+        min-width: 5rem;
+    }
+}
+
+.slideUp {
+    animation: slideUp 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0vh);
+    }
+}
+
+@media (min-width: 1000px) {
+    .mobileControls {
+        display: none;
+    }
+    .closeFilters {
+        display: flex;
+        visibility: visible;
+        gap: 1rem;
+        outline: solid red 1px;
+        width: 100%;
+        justify-content: center;
+    }
+    .btnContainer {
+        button {
+            color: $rtr-green-dark;
+            height: 3.2rem;
+        }
+        div {
+            select {
+                height: 3rem;
+                color: $rtr-green-dark;
+            }
+            select:hover {
+                color: $rtr-tan;
+            }
+        }
     }
 }

@@ -1,20 +1,33 @@
 @import '../../styles/utility/utility.scss';
 
-.btn {
-    border: none;
-    background: none;
+.container {
+    display: flex;
     border: solid $rtr-seagreen 2px;
-    min-width: max(8rem,35%);
-    font-size: max(1.5rem, 2vw);
     white-space: nowrap;
     border-radius: 20px;
-    padding: 1rem 1.5rem;
     text-transform: uppercase;
     cursor: pointer;
-}
+    max-width: fit-content;
+    padding-right: 1rem;
+  }
+  
+  .select {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
 
-.btn:hover {
+  .container:hover {
     background-color: $rtr-seagreen;
     color: $rtr-tan;
     transition: all .2s ease-in-out;
+    cursor: pointer;
+
 }
+
+
+  
+
+  
+  
