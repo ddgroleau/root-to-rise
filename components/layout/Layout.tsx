@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../navbar/Navbar';
+import SpecialChar from '../special-char/SpecialChar';
 import styles from './Layout.module.css';
 
 const Layout = ({pageTitle, metaDescription, children}:any) => {
@@ -16,8 +17,8 @@ const Layout = ({pageTitle, metaDescription, children}:any) => {
             <main className={styles.main}>
                 {children}
             </main>
-            <div style={{marginLeft:"5%", position:"fixed", bottom: "0"}}>
-                {new Date().getFullYear()} | <Link href="https://www.linkedin.com/in/dangroleau/">Dan Groleau</Link>
+            <div style={{marginLeft:"5%", position:"fixed", bottom: "0", backgroundColor: "#E0DDD7", width:"100%"}}>
+                Site by 🧙 <Link href="https://www.linkedin.com/in/dangroleau/">Dan Groleau</Link>
             </div>
         </div>
     );

@@ -5,14 +5,16 @@ import styles from '../styles/shop/Shop.module.css';
 import getAllProducts from '../services/react-query/api.service';
 import { useEffect, useState } from 'react';
 import ShopFilters from '../components/shop-filters/ShopFilters';
+import { ProductCard } from '../components/product-card/ProductCard';
+import ProductDto from '../dto/ProductDto';
 
 const Shop: NextPage = () => {
     const { isLoading, isError, isSuccess, data: response } = useQuery("allProducts", getAllProducts );
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState<ProductDto[]>([]);
 
     useEffect(()=> {
         if(isSuccess) setProducts(response.data);
-    },[products]);
+    },[response]);
 
     const handleClick = ()=> {
         //
@@ -24,6 +26,14 @@ const Shop: NextPage = () => {
             pageTitle="Root to Rise Botanicals">
             <section className={styles.pageContainer}>
                 <ShopFilters onClick={handleClick}/>
+                <div className={styles.productsContainer}>
+                    {products.slice(0,7).map(product => {
+                        return (
+                            <div className={styles.cardContainer} key={product.productId}>
+                                <ProductCard product={product} />
+                            </div>);
+                    })}
+                </div>
             </section>
         </Layout>
     );

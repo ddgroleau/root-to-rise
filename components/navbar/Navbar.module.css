@@ -68,6 +68,7 @@
 .navContent {
   display: flex;
   width: 100%;
+  background-color: #073221;
 }
 
 .logoContainer {
@@ -125,6 +126,11 @@
   color: #7E7F1E;
   font-size: min(2rem, 1.5vw);
   text-transform: uppercase;
+}
+
+.slideDown {
+  -webkit-animation: slideDown 0.5s ease-in-out;
+          animation: slideDown 0.5s ease-in-out;
 }
 
 .iconContainer {
@@ -214,6 +220,26 @@
   }
 }
 @keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes slideDown {
   0% {
     opacity: 0;
     transform: translateY(-10%);

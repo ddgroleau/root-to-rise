@@ -13,6 +13,9 @@ const Dropdown = ({defaultValue, defaultText,options=[]}:DropdownProps) => {
         <div className={styles.container}>
             <select className={styles.select}>
                 <option value={defaultValue}>{defaultText}</option>
+                {options.length > 0 ? options.map(option => {
+                    return <option key={options.indexOf(option)} value={option.value}>{option.text}</option>;
+                }) : undefined}
             </select>
         </div>
 

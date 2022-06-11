@@ -26,7 +26,7 @@ const ShopFilters = ({onClick}:ShopFilterProps) => {
             <section className={styles.mobileControls}>
                 <span className={styles.controlsText}>
                     {"🌻 Filter your search"}
-                    <ChevronButton rotateDegrees={mobileToggled ? 90 : -90} onClick={handleClick}/>
+                    <ChevronButton rotateDegrees={mobileToggled ? -90 : 90} onClick={handleClick}/>
                 </span>
             </section>
             <section 

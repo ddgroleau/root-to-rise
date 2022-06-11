@@ -80,7 +80,6 @@
 
 .openFilters {
   display: flex;
-  visibility: visible;
   position: fixed;
   bottom: 0;
   flex-flow: row wrap;
@@ -94,7 +93,7 @@
 }
 
 .closeFilters {
-  visibility: collapse;
+  display: none;
 }
 
 .btnContainer button {
@@ -144,11 +143,10 @@
 
   .closeFilters {
     display: flex;
-    visibility: visible;
     gap: 1rem;
-    outline: solid red 1px;
     width: 100%;
     justify-content: center;
+    z-index: 3;
   }
 
   .btnContainer button {

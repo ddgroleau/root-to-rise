@@ -2,16 +2,34 @@
 
 .pageContainer {
     display: flex;
-    margin-top: max(6.25rem, 14vw);
+    margin-top: max(7rem, 14vw);
     justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow-x: hidden;
     width: 100%;
-    height: max-content;
-    min-height: max-content;
+    min-height: 80vh;
+    max-height: max-content;
     margin-bottom: 3rem;
 }
+
+.productsContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-block: max(2rem,3vw);
+    gap: 1rem;
+    row-gap: max(2rem,4vw);
+    width: 100%;
+    height: 100%;
+}
+
+.cardContainer {
+    display: flex;
+    width: 100%;
+    max-width: 22rem;
+}
+
 
 @media (min-width: 1400px) {
     .pageContainer {

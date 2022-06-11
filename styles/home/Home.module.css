@@ -48,7 +48,7 @@
 }
 .pageContainer {
   display: flex;
-  margin-top: 6.4rem;
+  margin-top: 5rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
