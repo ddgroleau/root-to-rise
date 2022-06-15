@@ -17,8 +17,15 @@ const Layout = ({pageTitle, metaDescription, children}:any) => {
             <main className={styles.main}>
                 {children}
             </main>
-            <div style={{marginLeft:"5%", position:"fixed", bottom: "0", backgroundColor: "#E0DDD7", width:"100%"}}>
-                Site by 🧙 <Link href="https://www.linkedin.com/in/dangroleau/">Dan Groleau</Link>
+            <div style={{
+                marginLeft:"5%", 
+                zIndex: "0",
+                position:"fixed",
+                bottom: "0",
+                backgroundColor: "rgba(224, 221, 215,0.5)", 
+                width:"100%"
+            }}>
+                Site by 🧙 <Link href="http://dangroleau.fullstackdan.com">Dan Groleau</Link>
             </div>
         </div>
     );

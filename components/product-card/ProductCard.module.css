@@ -52,6 +52,7 @@
   width: 100%;
 }
 .card img {
+  border-radius: 16px;
   width: 100%;
   height: auto;
   -o-object-fit: contain;
