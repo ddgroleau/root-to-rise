@@ -20,6 +20,7 @@ jobs:
       - name: Build Container
         env: 
             HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+            NODE_ENV: staging
         run: heroku container:push web -a root-to-rise-staging
 
       - name: Release Container
