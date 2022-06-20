@@ -13,6 +13,7 @@ FROM node:alpine AS production
 ARG X_TAG
 WORKDIR /opt/app
 ENV NODE_ENV=production
+ENV NEXT_PUBLIC_API_BASE_URI=http://root-to-rise-api-staging.herokuapp.com
 COPY --from=build /app/next.config.js ./
 COPY --from=build /app/public ./public
 COPY --from=build /app/.next ./.next
