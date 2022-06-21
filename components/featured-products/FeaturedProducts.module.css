@@ -73,6 +73,7 @@
 }
 .card img {
   border-radius: 16px;
+  max-width: 20rem;
 }
 
 .productTitle {

@@ -18,8 +18,8 @@ const Layout = ({pageTitle, metaDescription, children}:any) => {
                 {children}
             </main>
             <div style={{
-                marginLeft:"5%", 
-                zIndex: "0",
+                paddingLeft:"5%", 
+                zIndex: "3",
                 position:"fixed",
                 bottom: "0",
                 backgroundColor: "rgba(224, 221, 215,0.5)", 

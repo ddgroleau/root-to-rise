@@ -3,8 +3,10 @@
 @mixin navLink {
     text-decoration: none;
     color: $rtr-military-green;
-    font-size: min(2rem, 1.5vw);
+    font-size: min(2rem, 1.2vw);
     text-transform: uppercase;
+    cursor: pointer;
+    z-index: 3;
 }
 
 .navbar {
@@ -54,6 +56,7 @@
     width: 100%;
     text-align: center;
     color: $rtr-military-green;
+    cursor: pointer;
 }
 
 .mobileToggleContainer {
@@ -92,6 +95,7 @@
 .iconContainer {
     display: flex;
     flex-direction: column;
+    z-index: 0;
     img {
         cursor: pointer;
     }
@@ -126,13 +130,13 @@
         display: none;
     }
     .brand {
-        padding-bottom: min(2.5rem,4vh);
+        padding-bottom: min(3rem,5vh);
     }
     .navMenuDesktop {
         display: flex;
         position: absolute;
         width: 100%;
-        top: 5.5rem;
+        top: 6.5rem;
         justify-content: center;
         margin: 0;
         gap: 3rem;

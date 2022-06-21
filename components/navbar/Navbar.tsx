@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 
@@ -7,6 +8,7 @@ const Navbar = () => {
     const [isToggled, setIsToggled] = useState(false);
     const [isAnimated, setIsAnimated] = useState(false);
     const ICON_DIMENSION = 35;
+    const router = useRouter();
 
     const handleClick = () => {
         setIsAnimated(!isToggled);
@@ -22,7 +24,7 @@ const Navbar = () => {
                 </div>
             </Link>
             <div className={styles.navContent}>
-                <header className={styles.brand}>
+                <header className={styles.brand} onClick={()=>router.push("/")}>
                     Root To Rise Botanicals
                 </header>
                 <button className={styles.mobileToggleContainer} onClick={handleClick}>

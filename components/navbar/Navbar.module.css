@@ -94,6 +94,7 @@
   width: 100%;
   text-align: center;
   color: #7E7F1E;
+  cursor: pointer;
 }
 
 .mobileToggleContainer {
@@ -124,8 +125,10 @@
   padding: 0.25rem;
   text-decoration: none;
   color: #7E7F1E;
-  font-size: min(2rem, 1.5vw);
+  font-size: min(2rem, 1.2vw);
   text-transform: uppercase;
+  cursor: pointer;
+  z-index: 3;
 }
 
 .slideDown {
@@ -136,6 +139,7 @@
 .iconContainer {
   display: flex;
   flex-direction: column;
+  z-index: 0;
 }
 .iconContainer img {
   cursor: pointer;
@@ -174,14 +178,14 @@
   }
 
   .brand {
-    padding-bottom: min(2.5rem, 4vh);
+    padding-bottom: min(3rem, 5vh);
   }
 
   .navMenuDesktop {
     display: flex;
     position: absolute;
     width: 100%;
-    top: 5.5rem;
+    top: 6.5rem;
     justify-content: center;
     margin: 0;
     gap: 3rem;
@@ -189,8 +193,10 @@
   .navMenuDesktop a {
     text-decoration: none;
     color: #7E7F1E;
-    font-size: min(2rem, 1.5vw);
+    font-size: min(2rem, 1.2vw);
     text-transform: uppercase;
+    cursor: pointer;
+    z-index: 3;
     border-bottom: solid transparent 1px;
   }
   .navMenuDesktop a:hover {

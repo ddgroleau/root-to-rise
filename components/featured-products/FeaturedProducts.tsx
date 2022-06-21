@@ -18,23 +18,23 @@ const FeaturedProducts = () => {
     const products:Product[] = [
         {
             id: 1,
-            image: '/product_tummy-tamer.png',
+            image: '/tummy-tamer.jpg',
             name: 'Tummy Tamer Tincture'
         },
         {
             id: 2,
-            image: '/product_dandy-bitters.png',
+            image: '/dandy.jpg',
             name: 'Dandy Bitters'
         },
         {
             id: 3,
-            image: '/product_ground-down.png',
+            image: '/ground-down.jpg',
             name: 'Ground Down Tincture'
         },
     ];
 
     const handleClick = () => {
-        router.push("/coming-soon");
+        router.push("/shop");
     };
 
     return (

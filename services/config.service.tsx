@@ -11,16 +11,10 @@ export default class ConfigService {
     public static getVariable(key:string) : string {
         this.verifyKey(key);
         const host:string = window.origin;
+        if(!host.includes('staging') && host.includes('roottorisebotanicals'))
+            return this.retrieveKey(key, this.dependencies.PROD);
 
-        if(!host.includes('staging') && host.includes('roottorisebotanicals')) {
-            const prodEnv = this.dependencies.PROD;
-            let variable = key as keyof typeof prodEnv;
-            return prodEnv[variable] as string;
-        }
-        
-        const devEnv = this.dependencies.DEV;
-        let variable = key as keyof typeof devEnv;
-        return devEnv[variable] as string;
+        return this.retrieveKey(key, this.dependencies.DEV);
     }
 
     private static verifyKey(key:string):void {
@@ -29,6 +23,10 @@ export default class ConfigService {
         return;
     }
 
+    private static retrieveKey(key:string, env:object) : string {
+        let variable = key as keyof typeof env;
+        return env[variable] as string;
+    }
 }
 
 export enum ConfigVars {
