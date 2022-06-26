@@ -4,10 +4,15 @@ import styles from './Dropdown.module.css';
 type DropdownProps = {
     defaultValue:number;
     defaultText:string
-    options?:{value:string, text:string}[]
+    options:Option[]
 }
 
-const Dropdown = ({defaultValue, defaultText,options=[]}:DropdownProps) => {
+export type Option = {
+    value:number, 
+    text:string
+}
+
+const Dropdown = ({defaultValue, defaultText,options}:DropdownProps) => {
 
     return (
         <div className={styles.container}>

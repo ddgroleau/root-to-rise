@@ -1,5 +1,5 @@
 export default class IngredientDto {
-    public ingredientId : string = '';
+    public ingredientId : number = 0;
     public name : string = '';
     public type : string = '';
     public alternateName : string = '';
