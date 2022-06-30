@@ -23,8 +23,8 @@ const FeaturedProducts = () => {
         },
         {
             id: 2,
-            image: '/dandy.jpg',
-            name: 'Dandy Bitters'
+            image: '/spring-snease.jpg',
+            name: 'Spring SnEase'
         },
         {
             id: 3,

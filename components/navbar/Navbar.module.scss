@@ -2,7 +2,7 @@
 
 @mixin navLink {
     text-decoration: none;
-    color: $rtr-military-green;
+    color: $rtr-olive-drab;
     font-size: min(2rem, 1.2vw);
     text-transform: uppercase;
     cursor: pointer;
@@ -11,12 +11,12 @@
 
 .navbar {
     display: flex;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     align-items: center;
     background-color: $rtr-green-dark;
-    color: $rtr-military-green;
+    color: $rtr-olive-drab;
     padding-block: 1%;
     animation: fadeDown .3s ease-in-out;
     z-index: 10;
@@ -40,7 +40,7 @@
     .logo {
         height: 100%;
         width: 100%;
-        background-image: url("/logo-brand.svg");
+        background-image: url("/logo-transparent.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -55,7 +55,7 @@
     font-size: max(2rem, 2.5vw);
     width: 100%;
     text-align: center;
-    color: $rtr-military-green;
+    color: $rtr-olive-drab;
     cursor: pointer;
 }
 
@@ -136,7 +136,7 @@
         display: flex;
         position: absolute;
         width: 100%;
-        top: 6.5rem;
+        top: 5.5rem;
         justify-content: center;
         margin: 0;
         gap: 3rem;
@@ -154,10 +154,9 @@
         width: 100%;
         justify-content: flex-end;
         margin-right: 5.5rem;
-        max-height: 1.5rem;
-        bottom: 0.75rem;
+        bottom: 0;
         flex-flow: row nowrap;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
 }

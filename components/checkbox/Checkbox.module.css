@@ -46,21 +46,14 @@
     transform: translateX(0vw);
   }
 }
-.btn {
-  border: none;
-  background: none;
-  border: solid #405E5C 2px;
-  min-width: max(6rem, 35%);
-  font-size: max(1.5rem, 2vw);
-  white-space: nowrap;
-  border-radius: 20px;
-  padding: 1rem 1.5rem;
-  text-transform: uppercase;
-  cursor: pointer;
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  justify-content: flex-end;
+  margin: 0.5rem 1rem;
 }
 
-.btn:hover {
-  background-color: #405E5C;
-  color: #E0DDD7;
-  transition: all 0.2s ease-in-out;
-}/*# sourceMappingURL=Button.module.css.map */
+.checkbox:checked {
+  accent-color: #073221;
+}/*# sourceMappingURL=Checkbox.module.css.map */

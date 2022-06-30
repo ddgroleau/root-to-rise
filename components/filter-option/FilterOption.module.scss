@@ -1,0 +1,54 @@
+@import '../../styles/utility/utility.scss';
+
+.filterDetails {
+    width: 100%;
+    background: $rtr-tan;
+    box-shadow: 0 .1rem 1rem -.5rem $rtr-shadow;
+    border-radius: 5px;
+    display: flex;
+    width: 100%;
+    summary::-webkit-details-marker { 
+        display:none; 
+    }
+}
+
+.filterDetails[open] {
+  padding-bottom: 0.5rem;
+}
+  
+.filterSummary {
+  padding: 1rem;
+  border-radius: 5px;
+  display: block;
+  background: $rtr-eggshell;
+  padding-left: 2.2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.filterSummary:before {
+  content: '';
+  border-width: .4rem;
+  border-style: solid;
+  border-color: transparent transparent transparent $rtr-green;
+  position: absolute;
+  top: 1.3rem;
+  left: 1rem;
+  transform: rotate(0);
+  transform-origin: .2rem 50%;
+  transition: .25s transform ease;
+}
+
+.filterDetails[open] > .filterSummary:before {
+  transform: rotate(90deg);
+}
+
+@media (min-width: 767px) {
+  .filterDetails {
+    height: 0;
+  }
+  .filterDetails[open] {
+    height: auto
+  }
+}
+

@@ -23,7 +23,7 @@
     font-size: 1.2rem;
     gap: max(1rem, 1vw);
     cursor: pointer;
-    z-index: 4;
+    z-index: 5;
 }
 
 .controlsText {
@@ -34,40 +34,52 @@
 
 .openFilters {
     display: flex;
-    position: fixed;
-    bottom: 0;
-    flex-flow: row wrap;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    min-height: max-content;
+    overflow-y: scroll;
+    position: sticky;
+    top:-1rem;
     width: 100%;
-    padding-left: 10%;
-    padding-top: 1.5rem;
-    padding-bottom: 5rem;
-    background-color: $rtr-green-dark;
-    z-index: 1;
+    padding-top: 1rem;
+    gap: 1rem;
+}
+
+.filterOption {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    max-width: 16rem;
+    min-width: max-content;
 }
 
 .closeFilters {
     display: none;
 }
 
-.btnContainer {
-    button {
-        font-size: max(1.2rem, 1vw);
-        display: flex;
-        align-items: center;
-        padding: 0.5rem 1rem;
-        min-width: 5rem;
-        color: $rtr-tan;
-    }
-    select {
-        color: $rtr-tan;
-        font-size: max(1.2rem, 1vw);
-        min-width: 5rem;
-    }
-}
-
 .slideUp {
     animation: slideUp 0.5s ease-in-out;
+}
+
+.filterBtn {
+    button {
+        max-width: 10rem;
+        min-width: 10rem;
+        background-color: $rtr-seagreen;
+        color: $rtr-eggshell;
+        border: none;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 .1rem 1rem -.5rem $rtr-shadow;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: $rtr-eggshell;
+        color: $rtr-seagreen;
+        transition: all 0.2s ease-in-out;
+    }
 }
 
 @keyframes slideUp {
@@ -81,33 +93,58 @@
     }
 }
 
-@media (min-width: 1000px) {
+.shake {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+  
+@keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0);
+    }
+}
+
+@media (min-width: 767px) {
+    .filterOption {
+        width: 100%;
+    }
     .mobileControls {
+        display: none;
+    }
+    .openFilters {
         display: none;
     }
     .closeFilters {
         display: flex;
+        flex-flow: row nowrap;
+        min-height: max-content;
+        position: sticky;
         gap: 1rem;
-        width: 100%;
-        justify-content: center;
-        z-index: 3;
+        top:-1rem;
+        width: 90%;
+        padding-top: 1rem;
     }
-    .btnContainer {
-        button {
-            color: $rtr-green-dark;
-            height: 3.2rem;
-        }
-        div {
-            select {
-                height: 3rem;
-                color: $rtr-green-dark;
-            }
-            option {
-                color: $rtr-green-dark;
-            }
-            select:hover {
-                color: $rtr-tan;
-            }
-        }
+    .clearFiltersBtn {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    .slideUp {
+        animation: none;
     }
 }

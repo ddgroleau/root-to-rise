@@ -2,7 +2,6 @@
 
 .pageContainer {
     display: flex;
-    margin-top: 5rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -17,7 +16,7 @@
 @media (min-width: 1000px) {
     .pageContainer {
         max-width: max(1200px,90%);
-        margin-top: max(4rem,11vw);
         justify-content: center;
+        margin-top: 2rem;
     }
 }

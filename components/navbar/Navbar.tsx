@@ -7,7 +7,7 @@ import styles from "./Navbar.module.css";
 const Navbar = () => {
     const [isToggled, setIsToggled] = useState(false);
     const [isAnimated, setIsAnimated] = useState(false);
-    const ICON_DIMENSION = 35;
+    const ICON_DIMENSION = 25;
     const router = useRouter();
 
     const handleClick = () => {

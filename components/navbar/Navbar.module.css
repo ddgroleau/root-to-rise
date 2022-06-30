@@ -48,12 +48,13 @@
 }
 .navbar {
   display: flex;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
   width: 100%;
   align-items: center;
   background-color: #073221;
-  color: #7E7F1E;
+  color: #BDB048;
   padding-block: 1%;
   -webkit-animation: fadeDown 0.3s ease-in-out;
           animation: fadeDown 0.3s ease-in-out;
@@ -79,7 +80,7 @@
 .logoContainer .logo {
   height: 100%;
   width: 100%;
-  background-image: url("/logo-brand.svg");
+  background-image: url("/logo-transparent.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -93,7 +94,7 @@
   font-size: max(2rem, 2.5vw);
   width: 100%;
   text-align: center;
-  color: #7E7F1E;
+  color: #BDB048;
   cursor: pointer;
 }
 
@@ -124,7 +125,7 @@
   line-height: 3rem;
   padding: 0.25rem;
   text-decoration: none;
-  color: #7E7F1E;
+  color: #BDB048;
   font-size: min(2rem, 1.2vw);
   text-transform: uppercase;
   cursor: pointer;
@@ -185,14 +186,14 @@
     display: flex;
     position: absolute;
     width: 100%;
-    top: 6.5rem;
+    top: 5.5rem;
     justify-content: center;
     margin: 0;
     gap: 3rem;
   }
   .navMenuDesktop a {
     text-decoration: none;
-    color: #7E7F1E;
+    color: #BDB048;
     font-size: min(2rem, 1.2vw);
     text-transform: uppercase;
     cursor: pointer;
@@ -209,10 +210,9 @@
     width: 100%;
     justify-content: flex-end;
     margin-right: 5.5rem;
-    max-height: 1.5rem;
-    bottom: 0.75rem;
+    bottom: 0;
     flex-flow: row nowrap;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 }
 @-webkit-keyframes fadeDown {

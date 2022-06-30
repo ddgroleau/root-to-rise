@@ -1,37 +1,31 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useQuery } from 'react-query';
+import React, { Dispatch, RefObject, SetStateAction, useMemo, useState } from 'react';
 import IngredientDto from '../../dto/IngredientDto';
 import PropertyDto from '../../dto/PropertyDto';
 import TraitDto from '../../dto/TraitDto';
-import { getAllIngredients, getAllProperties, getAllTraits } from '../../services/react-query/api.service';
+import FilterItem from '../../models/FilterItem';
+import SortParams from '../../models/SortParams';
 import Button from '../button/Button';
 import ChevronButton from '../chevron-button/ChevronButton';
-import Dropdown from '../dropdown/Dropdown';
+import FilterOption from '../filter-option/FilterOption';
 import styles from './ShopFilters.module.css';
 
 type ShopFilterProps = {
-    onClick:React.MouseEventHandler
+    onClearFilters:React.MouseEventHandler;
+    onApplyFilters:React.MouseEventHandler;
+    ingredients:FilterItem<IngredientDto>;
+    properties:FilterItem<PropertyDto>;
+    traits:FilterItem<TraitDto>;
+    sortParams: {param:SortParams,ref:RefObject<HTMLInputElement>}[]
+    filterError:{isFilterError:boolean,setIsFilterError:Dispatch<SetStateAction<boolean>>};
 }
 
-const ShopFilters = ({onClick}:ShopFilterProps) => {
-    const { isLoading:isGettingIngredients,isSuccess:isIngredientSuccess, data: ingredientData } 
-        = useQuery("allIngredients", getAllIngredients );
-    const { isLoading:isGettingProperties, isSuccess:isPropertySuccess, data: propertyData } 
-        = useQuery("allProperties", getAllProperties );
-    const { isLoading:isGettingTraits,     isSuccess:isTraitSuccess, data: traitData } 
-        = useQuery("allTraits", getAllTraits );
+const ShopFilters = ({
+    ingredients,properties,traits,sortParams,filterError,onClearFilters, onApplyFilters}:ShopFilterProps) => {
     const [mobileToggled, setMobileToggled] = useState(false);
     const [animate, setAnimate] = useState(false);
-    const [ingredients, setIngredients] = useState<IngredientDto[]>([]);
-    const [properties, setProperties] = useState<PropertyDto[]>([]);
-    const [traits, setTraits] = useState<TraitDto[]>([]);
 
-    useEffect(()=> {
-        if(isIngredientSuccess) setIngredients(ingredientData.data);
-        if(isPropertySuccess) setProperties(propertyData.data);
-        if(isTraitSuccess) setTraits(traitData.data);
-    },[ingredientData,propertyData,traitData]);
-
+    useMemo(()=> {
+    },[filterError]);
 
     const handleClick = () => {
         setAnimate(!mobileToggled);
@@ -42,12 +36,20 @@ const ShopFilters = ({onClick}:ShopFilterProps) => {
         setAnimate(!mobileToggled);
     };
 
+    const manageSortItems = (event:React.MouseEvent<HTMLElement,MouseEvent>) => {
+        let selectedParam = event.target as HTMLElement;
+        sortParams.map(item => { 
+            if(selectedParam.id !== item.param && item.ref.current)
+                item.ref.current.checked = false;
+        });
+    };
+
     return (
         <menu className={styles.container}>
             <section className={styles.mobileControls}>
                 <span className={styles.controlsText}>
                     {"🌻 Filter your search"}
-                    <ChevronButton rotateDegrees={mobileToggled ? -90 : 90} onClick={handleClick}/>
+                    <ChevronButton rotateDegrees={mobileToggled ? 90 : -90} onClick={handleClick}/>
                 </span>
             </section>
             <section 
@@ -55,44 +57,30 @@ const ShopFilters = ({onClick}:ShopFilterProps) => {
                     ${animate ? styles.slideUp : undefined}`}
                 onAnimationEnd={handleAnimationEnd}
             >
-                <div className={styles.btnContainer}>
-                    <Button text="ALL PRODUCTS" onClick={onClick}/>
+                <div className={styles.filterOption}>
+                    <FilterOption items={ingredients} labelText={"Herbs"}/>
                 </div>
-                <div className={styles.btnContainer}>
-                    <Dropdown 
-                        defaultValue={0} 
-                        defaultText="HERBS" 
-                        options={ingredients.map(
-                            ingredient => { return { text:ingredient.name,value:ingredient.ingredientId }; }
-                        )}
-                    />
+                <div className={styles.filterOption}>
+                    <FilterOption items={properties} labelText={"Actions"}/>
                 </div>
-                <div className={styles.btnContainer}>
-                    <Dropdown 
-                        defaultValue={0} 
-                        defaultText="ACTIONS"
-                        options={properties.map(
-                            property => { return { text:property.name,value:property.propertyId }; }
-                        )}
-                    />
+                <div className={styles.filterOption}>
+                    <FilterOption items={traits} labelText={"Energies"}/>
                 </div>
-                <div className={styles.btnContainer}>
-                    <Dropdown 
-                        defaultValue={0} 
-                        defaultText="ENERGIES"
-                        options={traits.map(
-                            trait => { return { text:trait.name,value:trait.traitId }; }
-                        )}
-                    />
+                <div className={styles.filterOption} onClick={(event)=>manageSortItems(event)}>
+                    <FilterOption 
+                        items={{
+                            elements:sortParams.map(option => { return {name: option.param}; } ),
+                            references:sortParams.map(option => option.ref)}}
+                        labelText={"Sort By"}/>
                 </div>
-                <div className={styles.btnContainer}>
-                    <Dropdown 
-                        defaultValue={0} 
-                        defaultText="SORT BY ⇕"
-                        options={[
-                            {text:"PRICE",value: 1}
-                        ]}
-                    />
+                <div 
+                    className={`${filterError.isFilterError ? styles.shake : undefined } ${styles.filterBtn}`} 
+                    onAnimationEnd={()=>filterError.setIsFilterError(false)}
+                >
+                    <Button text="APPLY FILTERS" onClick={onApplyFilters}/>
+                </div>
+                <div className={styles.filterBtn}>
+                    <Button text="CLEAR FILTERS" onClick={onClearFilters}/>
                 </div>
             </section>
         </menu>
