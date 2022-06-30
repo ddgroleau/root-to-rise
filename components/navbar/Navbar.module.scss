@@ -2,19 +2,21 @@
 
 @mixin navLink {
     text-decoration: none;
-    color: $rtr-military-green;
-    font-size: min(2rem, 1.5vw);
+    color: $rtr-olive-drab;
+    font-size: min(2rem, 1.2vw);
     text-transform: uppercase;
+    cursor: pointer;
+    z-index: 3;
 }
 
 .navbar {
     display: flex;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     align-items: center;
     background-color: $rtr-green-dark;
-    color: $rtr-military-green;
+    color: $rtr-olive-drab;
     padding-block: 1%;
     animation: fadeDown .3s ease-in-out;
     z-index: 10;
@@ -28,6 +30,7 @@
 .navContent {
     display: flex;
     width: 100%;
+    background-color: $rtr-green-dark;
 }
 
 .logoContainer {
@@ -37,7 +40,7 @@
     .logo {
         height: 100%;
         width: 100%;
-        background-image: url("/logo-brand.svg");
+        background-image: url("/logo-transparent.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -52,7 +55,8 @@
     font-size: max(2rem, 2.5vw);
     width: 100%;
     text-align: center;
-    color: $rtr-military-green;
+    color: $rtr-olive-drab;
+    cursor: pointer;
 }
 
 .mobileToggleContainer {
@@ -84,9 +88,20 @@
     }
 }
 
+.slideDown {
+    animation: slideDown 0.5s ease-in-out;
+}
+
 .iconContainer {
     display: flex;
     flex-direction: column;
+    z-index: 0;
+    img {
+        cursor: pointer;
+    }
+    img:hover {
+        filter:drop-shadow(0px 0px 2px $rtr-olive-drab)
+    }
 }
 
 @media (min-width: 700px) {
@@ -115,27 +130,50 @@
         display: none;
     }
     .brand {
-        padding-bottom: min(1.5rem,4vh);
+        padding-bottom: min(3rem,5vh);
     }
     .navMenuDesktop {
         display: flex;
-        position: relative;
+        position: absolute;
+        width: 100%;
+        top: 5.5rem;
+        justify-content: center;
         margin: 0;
         gap: 3rem;
         a {
             @include navLink();
+            border-bottom: solid transparent 1px;
+        }
+        a:hover{
+            border-bottom: solid $rtr-olive-drab 1px;
         }
     }
     .iconContainer {
         display: flex;
+        position: absolute;
+        width: 100%;
+        justify-content: flex-end;
+        margin-right: 5.5rem;
+        bottom: 0;
         flex-flow: row nowrap;
-        gap: 1.5rem
+        gap: 1.5rem;
     }
 
 }
 
 
 @keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideDown {
     0% {
         opacity: 0;
         transform: translateY(-10%);

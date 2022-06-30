@@ -13,7 +13,7 @@ const Hero = () => {
                 Approach to Self<span className="specialChar">-</span>Care
                 </p>
                 <div className={styles.btnContainer}>
-                    <Button text="Shop Now" onClick={()=>{router.push("/coming-soon");}} />
+                    <Button text="Shop Now" onClick={()=>{router.push("/shop");}} />
                 </div>
             </div>
             <div className={styles.imgContainer}>

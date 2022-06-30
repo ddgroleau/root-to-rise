@@ -1,0 +1,14 @@
+@import '../../styles/utility/utility.scss';
+
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: flex-end;
+    margin: 0.5rem 1rem;
+    
+}
+
+.checkbox:checked {
+    accent-color: $rtr-green-dark;
+}

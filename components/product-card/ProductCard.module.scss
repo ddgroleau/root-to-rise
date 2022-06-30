@@ -1,0 +1,28 @@
+@import '../../styles/utility/utility.scss';
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    img {
+        border-radius: 16px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+.productTitle {
+    font-size: max(1.2rem, 2vw);
+    text-align: center;
+    color: $rtr-military-green;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.productPrice {
+    text-align: center;
+    font-style: italic;
+    color: $rtr-military-green;
+    margin-top: 0.5rem;
+}

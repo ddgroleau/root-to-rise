@@ -12,7 +12,7 @@ RUN yarn build
 FROM node:alpine AS production
 ARG X_TAG
 WORKDIR /opt/app
-ENV NODE_ENV=production
+
 COPY --from=build /app/next.config.js ./
 COPY --from=build /app/public ./public
 COPY --from=build /app/.next ./.next

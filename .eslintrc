@@ -9,8 +9,9 @@
         "import/extensions": "warn",
         "semi":"error",
         "no-undef": "error",
-        "no-unused-vars":"error",
-        "react/no-unescaped-entities": 0
+        "no-unused-vars":"off",
+        "react/no-unescaped-entities": 0,
+        "react-hooks/exhaustive-deps": "off"
     }
   }
   
