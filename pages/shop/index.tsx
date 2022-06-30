@@ -12,12 +12,16 @@ import IngredientDto from '../../dto/IngredientDto';
 import PropertyDto from '../../dto/PropertyDto';
 import TraitDto from '../../dto/TraitDto';
 import FilterItem from '../../models/FilterItem';
-import { AxiosResponse } from 'axios';
 import Image from 'next/image';
 import SortParams from '../../models/SortParams';
 import SearchService from '../../services/search.service';
 
 const Shop: NextPage = () => {
+    const [products, setProducts] = useState<ProductDto[]>([]);
+    const [filteredProducts, setFilteredProducts] = useState<ProductDto[]>([]);
+    const [isAnimated,setIsAnimated] = useState<boolean>(true);
+    const [isFilterError,setIsFilterError] = useState<boolean>(false);
+
     const { isLoading:isGettingProducts,   isSuccess:isProductSuccess, data: productData } 
         = useQuery("allProducts", getAllProducts );
     const { isLoading:isGettingIngredients,isSuccess:isIngredientSuccess, data: ingredientData } 
@@ -32,27 +36,22 @@ const Shop: NextPage = () => {
         = useState<FilterItem<PropertyDto>>({elements:[],references:[]});
     const [traits, setTraits] 
         = useState<FilterItem<TraitDto>>({elements:[],references:[]});
-    const [products, setProducts] = useState<ProductDto[]>([]);
-    const [filteredProducts, setFilteredProducts] = useState<ProductDto[]>([]);
-    const [isAnimated,setIsAnimated] = useState<boolean>(true);
-    const [isFilterError,setIsFilterError] = useState<boolean>(false);
+
     const sortParams = [
-        {param:SortParams.PRICE_LOW_TO_HIGH,ref:useRef() as RefObject<HTMLInputElement>},
-        {param:SortParams.PRICE_HIGH_TO_LOW,ref:useRef() as RefObject<HTMLInputElement>},
-        {param:SortParams.NAME_A_Z,ref:useRef() as RefObject<HTMLInputElement>},
-        {param:SortParams.NAME_Z_A,ref:useRef() as RefObject<HTMLInputElement>},
-    ];
+        { param:SortParams.PRICE_LOW_TO_HIGH, ref:useRef() as RefObject<HTMLInputElement> },
+        { param:SortParams.PRICE_HIGH_TO_LOW, ref:useRef() as RefObject<HTMLInputElement> },
+        { param:SortParams.NAME_A_Z,          ref:useRef() as RefObject<HTMLInputElement> },
+        { param:SortParams.NAME_Z_A,          ref:useRef() as RefObject<HTMLInputElement> },
+    ]; 
     
     useEffect(()=> {
         const setItemState = (stateSetter:any,itemData:any) => stateSetter({
             elements:itemData.data, references:itemData.data.map(() => createRef())
         });
-
         if(isProductSuccess) {
             setProducts(productData.data);
             setFilteredProducts(productData.data);
         }
-
         if(isIngredientSuccess) setItemState(setIngredients,ingredientData);
         if(isPropertySuccess) setItemState(setProperties,propertyData);
         if(isTraitSuccess) setItemState(setTraits,traitData);
