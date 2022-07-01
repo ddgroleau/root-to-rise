@@ -4,7 +4,7 @@ import Checkbox from '../checkbox/Checkbox';
 import styles from './FilterOption.module.css';
 
 type FilterOptionProps = {
-    items:FilterItem<any>;
+    items:FilterItem<string>;
     labelText: string;
 }
 
@@ -15,10 +15,10 @@ const FilterOption = ({items, labelText}:FilterOptionProps) => {
                 {labelText}
             </summary>
             <div className={styles.optionsContainer}>
-                {items.elements.slice(0,5).map(item=> {
+                {items.elements.map(item=> {
                     return <Checkbox 
-                        key={item.name} 
-                        label={item.name} 
+                        key={item} 
+                        label={item} 
                         checkboxRef={items.references[items.elements.indexOf(item)]}
                     />;
                 })}

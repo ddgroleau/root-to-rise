@@ -10,18 +10,18 @@ export const getAllProducts = async (): Promise<AxiosResponse> => {
     return await axios.get<ProductDto[]>(endpoint).catch(error => error.data);
 };
 
-export const getAllIngredients = async (): Promise<AxiosResponse> => {
-    let endpoint = ConfigService.getVariable(ConfigVars.API) + "/ingredients/all";
-    return await axios.get<IngredientDto[]>(endpoint).catch(error => error.data);
+export const getDistinctIngredientNames = async (): Promise<AxiosResponse> => {
+    let endpoint = ConfigService.getVariable(ConfigVars.API) + "/ingredients/names/distinct";
+    return await axios.get<string[]>(endpoint).catch(error => error.data);
 };
 
-export const getAllProperties = async (): Promise<AxiosResponse> => {
-    let endpoint = ConfigService.getVariable(ConfigVars.API) + "/properties/all";
-    return await axios.get<PropertyDto[]>(endpoint).catch(error => error.data);
+export const getDistinctPropertyNames = async (): Promise<AxiosResponse> => {
+    let endpoint = ConfigService.getVariable(ConfigVars.API) + "/properties/names/distinct";
+    return await axios.get<string[]>(endpoint).catch(error => error.data);
 };
 
-export const getAllTraits = async (): Promise<AxiosResponse> => {
-    let endpoint = ConfigService.getVariable(ConfigVars.API) + "/traits/all";
-    return await axios.get<TraitDto[]>(endpoint).catch(error => error.data);
+export const getDistinctTraitNames = async (): Promise<AxiosResponse> => {
+    let endpoint = ConfigService.getVariable(ConfigVars.API) + "/traits/names/distinct";
+    return await axios.get<string[]>(endpoint).catch(error => error.data);
 };
 

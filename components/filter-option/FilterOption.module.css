@@ -50,8 +50,8 @@
   width: 100%;
   background: #E0DDD7;
   box-shadow: 0 0.1rem 1rem -0.5rem rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
   display: flex;
+  border-radius: 5px;
   width: 100%;
 }
 .filterDetails summary::-webkit-details-marker {
@@ -60,6 +60,25 @@
 
 .filterDetails[open] {
   padding-bottom: 0.5rem;
+}
+.filterDetails[open] .optionsContainer {
+  max-height: 10rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.filterDetails[open] .optionsContainer::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.filterDetails[open] .optionsContainer::-webkit-scrollbar-track {
+  background: #F1F1F1;
+}
+.filterDetails[open] .optionsContainer::-webkit-scrollbar-thumb {
+  background-color: #405E5C;
+  border-radius: 1rem;
+}
+.filterDetails[open] .optionsContainer {
+  scrollbar-width: thin;
+  scrollbar-color: #405E5C #F1F1F1;
 }
 
 .filterSummary {
@@ -83,6 +102,12 @@
   transform: rotate(0);
   transform-origin: 0.2rem 50%;
   transition: 0.25s transform ease;
+}
+
+.filterDetails[open] > .filterSummary {
+  border-radius: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .filterDetails[open] > .filterSummary:before {

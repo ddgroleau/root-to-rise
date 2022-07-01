@@ -2,15 +2,12 @@ import type { NextPage } from 'next';
 import { useQuery } from 'react-query';
 import Layout from '../../components/layout/Layout';
 import styles from '../../styles/shop/Shop.module.css';
-import { getAllIngredients, getAllProducts, getAllProperties, getAllTraits } 
+import { getAllProducts, getDistinctIngredientNames, getDistinctPropertyNames, getDistinctTraitNames } 
     from '../../services/react-query/api.service';
 import { createRef, RefObject, useEffect, useRef, useState } from 'react';
 import ShopFilters from '../../components/shop-filters/ShopFilters';
 import { ProductCard } from '../../components/product-card/ProductCard';
 import ProductDto from '../../dto/ProductDto';
-import IngredientDto from '../../dto/IngredientDto';
-import PropertyDto from '../../dto/PropertyDto';
-import TraitDto from '../../dto/TraitDto';
 import FilterItem from '../../models/FilterItem';
 import Image from 'next/image';
 import SortParams from '../../models/SortParams';
@@ -25,17 +22,17 @@ const Shop: NextPage = () => {
     const { isLoading:isGettingProducts,   isSuccess:isProductSuccess, data: productData } 
         = useQuery("allProducts", getAllProducts );
     const { isLoading:isGettingIngredients,isSuccess:isIngredientSuccess, data: ingredientData } 
-        = useQuery("allIngredients", getAllIngredients );
+        = useQuery("allIngredients", getDistinctIngredientNames );
     const { isLoading:isGettingProperties, isSuccess:isPropertySuccess, data: propertyData } 
-        = useQuery("allProperties", getAllProperties );
+        = useQuery("allProperties", getDistinctPropertyNames );
     const { isLoading:isGettingTraits,     isSuccess:isTraitSuccess, data: traitData } 
-        = useQuery("allTraits", getAllTraits );
+        = useQuery("allTraits", getDistinctTraitNames );
     const [ingredients, setIngredients] 
-        = useState<FilterItem<IngredientDto>>({elements:[],references:[]});
+        = useState<FilterItem<string>>({elements:[],references:[]});
     const [properties, setProperties]  
-        = useState<FilterItem<PropertyDto>>({elements:[],references:[]});
+        = useState<FilterItem<string>>({elements:[],references:[]});
     const [traits, setTraits] 
-        = useState<FilterItem<TraitDto>>({elements:[],references:[]});
+        = useState<FilterItem<string>>({elements:[],references:[]});
 
     const sortParams = [
         { param:SortParams.PRICE_LOW_TO_HIGH, ref:useRef() as RefObject<HTMLInputElement> },
@@ -46,7 +43,9 @@ const Shop: NextPage = () => {
     
     useEffect(()=> {
         const setItemState = (stateSetter:any,itemData:any) => stateSetter({
-            elements:itemData.data, references:itemData.data.map(() => createRef())
+            // Replacing special characters to circumvent Demo text
+            elements:itemData.data.map((item: string) =>item.replace("-","–")),
+            references:itemData.data.map(() => createRef())
         });
         if(isProductSuccess) {
             setProducts(productData.data);

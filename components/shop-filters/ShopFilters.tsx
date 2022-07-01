@@ -12,9 +12,9 @@ import styles from './ShopFilters.module.css';
 type ShopFilterProps = {
     onClearFilters:React.MouseEventHandler;
     onApplyFilters:React.MouseEventHandler;
-    ingredients:FilterItem<IngredientDto>;
-    properties:FilterItem<PropertyDto>;
-    traits:FilterItem<TraitDto>;
+    ingredients:FilterItem<string>;
+    properties:FilterItem<string>;
+    traits:FilterItem<string>;
     sortParams: {param:SortParams,ref:RefObject<HTMLInputElement>}[]
     filterError:{isFilterError:boolean,setIsFilterError:Dispatch<SetStateAction<boolean>>};
 }
@@ -69,7 +69,7 @@ const ShopFilters = ({
                 <div className={styles.filterOption} onClick={(event)=>manageSortItems(event)}>
                     <FilterOption 
                         items={{
-                            elements:sortParams.map(option => { return {name: option.param}; } ),
+                            elements:sortParams.map(option => option.param),
                             references:sortParams.map(option => option.ref)}}
                         labelText={"Sort By"}/>
                 </div>

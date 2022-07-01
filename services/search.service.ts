@@ -7,14 +7,14 @@ import FilterItem from "../models/FilterItem";
 import SortParams from "../models/SortParams";
 
 export default class SearchService {
-    private filteredIngredients:IngredientDto[];
-    private filteredProperties:PropertyDto[];
-    private filteredTraits:TraitDto[];
+    private filteredIngredients:string[];
+    private filteredProperties:string[];
+    private filteredTraits:string[];
 
     constructor(
-        traits:FilterItem<TraitDto>, 
-        properties:FilterItem<PropertyDto>, 
-        ingredients:FilterItem<IngredientDto>
+        traits:FilterItem<string>, 
+        properties:FilterItem<string>, 
+        ingredients:FilterItem<string>
     ) {
         this.filteredIngredients = this.getFilteredObjects(ingredients);
         this.filteredProperties = this.getFilteredObjects(properties);
@@ -55,17 +55,17 @@ export default class SearchService {
             return (
                 (
                     (this.filteredIngredients.every(
-                        ingredient => product.ingredients.map(item=>item.name).includes(ingredient.name)))
+                        ingredient => product.ingredients.map(item=>item.name).includes(ingredient)))
                     || this.filteredIngredients.length < 1 
                 ) &&
                 (
                     (this.filteredProperties.every(
-                        property => product.properties.map(item=>item.name).includes(property.name)))
+                        property => product.properties.map(item=>item.name).includes(property)))
                     || this.filteredProperties.length < 1 
                 ) &&
                 (
                     (this.filteredTraits.every(
-                        trait => product.traits.map(item=>item.name).includes(trait.name)))
+                        trait => product.traits.map(item=>item.name).includes(trait)))
                     || this.filteredTraits.length < 1
                 )
             );
