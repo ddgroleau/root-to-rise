@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 import ProductDto from '../../dto/ProductDto';
 import ImageWithFallback from '../image-with-fallback/ImageWithFallback';
@@ -9,8 +10,10 @@ type ProductCardProps = {
 }
 
 export const ProductCard = ({product}:ProductCardProps) => {
+    const router = useRouter();
+
     return (
-        <article className={styles.card}>
+        <article className={styles.card} onClick={()=>router.push(`/shop/${product.productId}`)}>
             <ImageWithFallback 
                 src={"/" + product.imagePath} 
                 fallbackSrc="/product_tummy-tamer.png"
