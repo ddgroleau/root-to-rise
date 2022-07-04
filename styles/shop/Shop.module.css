@@ -92,6 +92,17 @@
           animation: fadeIn 0.8s ease-in-out;
 }
 
+.productDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
