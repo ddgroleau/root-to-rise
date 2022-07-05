@@ -6,6 +6,7 @@ import ProductDto from '../../dto/ProductDto';
 import { getProductById } from '../../services/react-query/api.service';
 import ProductDetails from '../../components/product-details/ProductDetails';
 import styles from '../../styles/shop/Shop.module.css';
+import InteractiveDetails from '../../components/interactive-details/InteractiveDetails';
 
 const ProductPage = () => {
     const router = useRouter();
@@ -31,7 +32,22 @@ const ProductPage = () => {
                     <ProductDetails product={product as ProductDto}/>
                 </div>
                 <div>
-
+                    <InteractiveDetails 
+                        titles={["Ingredients","Uses and Instructions", "Disclaimer and Safety"]}
+                        details={[
+                            product?.ingredients.map(ingredient => 
+                                `${ingredient.name}${!ingredient.alternateName ? 
+                                    "" : ` (${ingredient.alternateName})`}`)
+                                .join(", ") as string,
+                            `${product?.instructions} 
+                             We honor that you know your body and needs, 
+                             please follow a dosage or routine that resonates best for you.` as string,
+                            `${product?.disclaimer}
+                            *These statements have not been evaluated by the Food and Drug Administration.
+                            These products are not intended to diagnose, treat, cure, 
+                            or prevent any diseases.` as string
+                        ]}
+                    />
                 </div>
             </section>
         </Layout>

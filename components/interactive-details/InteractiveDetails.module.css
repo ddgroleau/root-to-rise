@@ -1,0 +1,100 @@
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-block: max(1rem, 1vw);
+  font-size: max(1.5rem, 1.5vw);
+}
+
+.details {
+  display: flex;
+  width: 85%;
+  justify-content: center;
+  text-align: center;
+  border: solid #405E5C 1px;
+  color: #405E5C;
+  border-radius: 5px;
+}
+.details p {
+  padding: 0rem 1rem;
+}
+
+.titles {
+  display: flex;
+  width: 85%;
+}
+.titles button {
+  background: none;
+  width: 33.33%;
+  border-radius: 5px;
+  border: solid #405E5C 1px;
+  text-transform: uppercase;
+  color: #405E5C;
+  padding-block: 0.5rem;
+}
+.titles .activeBtn {
+  background-color: #99634E;
+  color: #E0DDD7;
+}
+
+@media (min-width: 767px) {
+  .container {
+    align-items: flex-start;
+    padding-left: 1.5rem;
+    max-width: 70rem;
+  }
+
+  .titles button {
+    font-size: max(1.5rem, 1.5vw);
+    padding: 0.5rem 1rem;
+  }
+}/*# sourceMappingURL=InteractiveDetails.module.css.map */

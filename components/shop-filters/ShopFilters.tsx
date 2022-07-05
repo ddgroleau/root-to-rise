@@ -28,6 +28,7 @@ const ShopFilters = ({
     },[filterError]);
 
     const handleClick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         setAnimate(!mobileToggled);
         setMobileToggled(!mobileToggled);
     };
@@ -49,7 +50,7 @@ const ShopFilters = ({
             <section className={styles.mobileControls}>
                 <span className={styles.controlsText}>
                     {"🌻 Filter your search"}
-                    <ChevronButton rotateDegrees={mobileToggled ? 90 : -90} onClick={handleClick}/>
+                    <ChevronButton rotateDegrees={mobileToggled ? -90 : 90} onClick={handleClick}/>
                 </span>
             </section>
             <section 

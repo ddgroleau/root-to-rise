@@ -20,19 +20,20 @@
 }
 
 .title {
-    font-size: max(2.2rem, 2.2vw);
+    font-size: max(2.2rem, 3.2vw);
     margin: 0;
     width: 100%;
 }
 
 .price {
-    font-size: max(1.8rem, 1.8vw);
+    font-size: max(1.8rem, 2.8vw);
     padding-block: 0.5rem;
     width: 100%;
 }
 
 .description {
     font-size: max(1.2rem, 1.2vw);
+    line-height: max(1.8rem, 1.8vw);
     padding-block: 0.5rem;
     max-width: 30rem;
 }
@@ -69,18 +70,28 @@
     padding: 0.5rem;
     border-radius: 5px;
     max-width: 5rem;
+    font-size: max(1.2rem, 1.2vw);
+    color: $rtr-seagreen;
+
 }
 
 .imgContainer {
     display: flex;
-    width: 100%;
-    justify-content: center;
+    width: 85%;
+
 }
 
 @media (min-width: 767px) {
     .container {
         flex-direction: row;
+        gap: 2rem;
+        justify-content: center;
+        padding: 1rem;
         align-items: flex-start;
-        margin-top: 2rem;
+    }
+    .imgContainer {
+        img {
+            min-height: 30vw;
+        }
     }
 }

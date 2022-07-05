@@ -44,7 +44,7 @@ const Shop: NextPage = () => {
     useEffect(()=> {
         const setItemState = (stateSetter:any,itemData:any) => stateSetter({
             // Replacing special characters to circumvent Demo text
-            elements:itemData.data.map((item: string) =>item.replace("-","–")),
+            elements:itemData.data,
             references:itemData.data.map(() => createRef())
         });
         if(isProductSuccess) {

@@ -18,7 +18,7 @@ const FilterOption = ({items, labelText}:FilterOptionProps) => {
                 {items.elements.map(item=> {
                     return <Checkbox 
                         key={item} 
-                        label={item} 
+                        label={item.replace("-","–")} 
                         checkboxRef={items.references[items.elements.indexOf(item)]}
                     />;
                 })}
