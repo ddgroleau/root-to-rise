@@ -158,30 +158,24 @@
   .navIcon {
     padding: 0;
   }
-
   .navbar {
     flex-flow: row nowrap;
   }
-
   .navContent {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 80%;
   }
-
   .navMenuMobile {
     display: none;
   }
-
   .mobileToggleContainer {
     display: none;
   }
-
   .brand {
     padding-bottom: min(3rem, 5vh);
   }
-
   .navMenuDesktop {
     display: flex;
     position: absolute;
@@ -203,7 +197,6 @@
   .navMenuDesktop a:hover {
     border-bottom: solid #BDB048 1px;
   }
-
   .iconContainer {
     display: flex;
     position: absolute;

@@ -118,7 +118,6 @@
   .filterDetails {
     height: 0;
   }
-
   .filterDetails[open] {
     height: auto;
   }

@@ -17,7 +17,6 @@ const ProductDetails = ({product}:ProductDetailsProps) => {
         setQuantity(requestedQuantity);
     };
 
-    if(!product) return <div>Loading...</div>;
     return (
         <section className={styles.container}>
             <div className={styles.text}>

@@ -195,15 +195,12 @@
   .filterOption {
     width: 100%;
   }
-
   .mobileControls {
     display: none;
   }
-
   .openFilters {
     display: none;
   }
-
   .closeFilters {
     display: flex;
     flex-flow: row nowrap;
@@ -217,12 +214,10 @@
     width: 90%;
     padding-top: 1rem;
   }
-
   .clearFiltersBtn {
     display: block;
     margin-bottom: 0.5rem;
   }
-
   .slideUp {
     -webkit-animation: none;
             animation: none;

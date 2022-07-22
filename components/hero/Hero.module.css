@@ -108,7 +108,6 @@
     justify-content: flex-start;
     width: 80%;
   }
-
   .heroContent {
     position: relative;
     background: none;
@@ -124,13 +123,11 @@
     text-align: left;
     letter-spacing: normal;
   }
-
   .btnContainer {
     padding-left: max(3rem, 10vw);
     width: 100%;
     justify-content: flex-start;
   }
-
   .imgContainer {
     height: 100%;
     min-width: 50%;

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import CartIcon from "../cart-icon/CartIcon";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
@@ -59,12 +60,7 @@ const Navbar = () => {
                             </Link>
                         </div>
                         <div className={styles.navIcon}>
-                            <Link href={"/coming-soon"} passHref>
-                                <a>
-                                    <Image width={ICON_DIMENSION} height={ICON_DIMENSION} 
-                                        src="/icon-cart.svg" alt="Cart Icon."/>
-                                </a>
-                            </Link>
+                            <CartIcon iconDimension={ICON_DIMENSION} />
                         </div>
                     </div>
                 </menu>

@@ -25,6 +25,7 @@ const ProductPage = () => {
         setSearchId(productId as string);
     },[productId, searchId]);
 
+    if(!product) return <div>Loading...</div>;
     return (
         <Layout>
             <section className={styles.productDetails}>

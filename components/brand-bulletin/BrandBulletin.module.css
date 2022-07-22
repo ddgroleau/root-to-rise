@@ -132,7 +132,6 @@
   .bulletinContainer {
     border-radius: 16px;
   }
-
   .bulletinHero {
     display: flex;
     width: 100%;
@@ -142,7 +141,6 @@
     margin-left: 2.5%;
     z-index: 3;
   }
-
   .imgContainer {
     display: flex;
     min-width: 33%;
@@ -151,7 +149,6 @@
     background-size: cover;
     margin-left: 2.5%;
   }
-
   .heroText {
     display: flex;
     position: relative;
@@ -163,26 +160,21 @@
     color: #BDB048;
     font-size: max(1.5rem, 3vw);
   }
-
   .heroText, .tagline, .subheading {
     color: #BDB048;
   }
-
   .description {
     flex-direction: row;
     gap: 5%;
     max-width: 90%;
   }
-
   .bulletinDescription {
     padding: 1rem 5%;
     align-items: flex-start;
   }
-
   .descriptionTitle {
     margin-bottom: 2.5%;
   }
-
   .descriptionText {
     max-width: 28%;
   }
