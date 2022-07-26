@@ -1,0 +1,61 @@
+@import '../../styles/utility/utility.scss';
+
+.container {
+    position: fixed;
+    display: flex;
+    bottom: 4rem;
+    left: 0;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message {
+    border-radius: 5px;
+    color: $rtr-eggshell;
+    padding: 1rem 2rem;
+    font-size: max(1.5rem, 1.5vw);
+    margin-block: 1rem;
+    z-index: 4;
+}
+
+.success {
+    background-color: $rtr-seagreen;
+}
+
+.error {
+    background-color: $rtr-red;
+}
+
+.fadeInUp {
+    animation: fadeInUp 0.4s ease-in-out;
+}
+
+.fadeOutDown {
+    animation: fadeOutDown 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+@keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10rem);
+        height: 0;
+        margin: 0;
+        padding: 0;
+        display: none;
+    }
+}

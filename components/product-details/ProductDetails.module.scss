@@ -41,6 +41,7 @@
 .btn {
     width: 100%;
     padding-block: 1rem;
+    z-index: 3;
     button {
         color: $rtr-seagreen;
         font-size: max(1.5rem, 1.5vw);
