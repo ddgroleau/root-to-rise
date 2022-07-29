@@ -5,10 +5,9 @@ import ToastItem from './ToastItem';
 
 type ToastProps = {
     messages:ToastMessage[];
-    messageHandler:React.Dispatch<React.SetStateAction<ToastMessage[]>>;
 }
 
-const Toast = ({messages=[], messageHandler}:ToastProps) => {
+const Toast = ({messages=[]}:ToastProps) => {
     return (
         <section className={styles.container}>
             {messages.map((message)=> {

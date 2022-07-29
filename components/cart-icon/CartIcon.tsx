@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ProductDto from '../../dto/ProductDto';
+import { CartContext } from '../../pages/_app';
+import SpecialChar from '../special-char/SpecialChar';
 import styles from './CartIcon.module.css';
 
 type CartIconProps = {
@@ -9,20 +11,22 @@ type CartIconProps = {
 }
 
 const CartIcon = ({iconDimension}:CartIconProps) => {
-    const [cart, setCart] = useState<ProductDto[]>([]);
+    const cartContext = useContext(CartContext);
+    const [isAnimated,setIsAnimated] = useState(true);
 
-    useEffect(()=>{
-        if (typeof window !== 'undefined') {
-            const cartJson:string|null = localStorage.getItem("cart");
-            if(cartJson) setCart(JSON.parse(cartJson));
-            window.addEventListener('storage', () => {});
-        }
-    },[cart]);
+    useEffect(()=> {
+        setIsAnimated(true);
+    },[cartContext]);
 
     return (
         <>
-            {cart && cart.length > 0 ? 
-                <div className={styles.cartSize}><span>{cart.length}</span></div> 
+            {cartContext.cart.length > 0 ? 
+                <div 
+                    className={`${styles.cartSize} ${isAnimated ? styles.animate : ""}`}
+                    onAnimationEnd={()=>setIsAnimated(false)}
+                >
+                    <SpecialChar>{cartContext.cart.length}</SpecialChar>
+                </div> 
                 : undefined }
             <Link href={"/coming-soon"} passHref>
                 <a>

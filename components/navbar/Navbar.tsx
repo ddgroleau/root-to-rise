@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import ProductDto from "../../dto/ProductDto";
 import CartIcon from "../cart-icon/CartIcon";
 import styles from "./Navbar.module.css";
 
@@ -60,7 +61,7 @@ const Navbar = () => {
                             </Link>
                         </div>
                         <div className={styles.navIcon}>
-                            <CartIcon iconDimension={ICON_DIMENSION} />
+                            <CartIcon iconDimension={ICON_DIMENSION}/>
                         </div>
                     </div>
                 </menu>

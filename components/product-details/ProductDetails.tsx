@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import ProductDto from '../../dto/ProductDto';
 import ToastMessage from '../../models/ToastMessage';
+import { CartContext } from '../../pages/_app';
 import Button from '../button/Button';
 import ImageWithFallback from '../image-with-fallback/ImageWithFallback';
 import SpecialChar from '../special-char/SpecialChar';
@@ -14,6 +15,7 @@ type ProductDetailsProps = {
 const ProductDetails = ({product}:ProductDetailsProps) => {
     const [quantity, setQuantity] = useState<number>(1);
     const [eventMessages, setEventMessages] = useState<ToastMessage[]>([]);
+    const cartContext = useContext(CartContext);
    
     const handleQuantityChange = (event:any) => {
         const requestedQuantity = event.target.value;
@@ -22,19 +24,21 @@ const ProductDetails = ({product}:ProductDetailsProps) => {
     };
 
     const handleAddToCart = () => {
-        let cartJson:string|null = null;
-        if (typeof window !== 'undefined') cartJson = localStorage.getItem("cart");
-
-        if(cartJson === null) return localStorage.setItem("cart",JSON.stringify([product]));
-        
-        let cart = JSON.parse(cartJson);
-        cart.push(product);
-        localStorage.setItem("cart",JSON.stringify(cart));
-        return setEventMessages(
-            [
-                ...eventMessages, 
-                { message:`${product.name} added to cart.`, isSuccess:true }
-            ]);
+        if (typeof window !== 'undefined') {
+            let cartJson:string|null = localStorage.getItem("cart");
+            if(!cartJson) return localStorage.setItem("cart",JSON.stringify([{item:product,quantity:quantity}]));
+            
+            let cart = JSON.parse(cartJson);
+            cart.push({item:product,quantity:quantity});
+            localStorage.setItem("cart",JSON.stringify(cart));
+            cartContext.setCart(cart);
+            
+            return setEventMessages(
+                [
+                    ...eventMessages, 
+                    { message:`${product.name} added to cart.`, isSuccess:true }
+                ]);
+        } 
     };
 
     return (
@@ -76,7 +80,7 @@ const ProductDetails = ({product}:ProductDetailsProps) => {
                     width={325}
                     alt="Product Image" />
             </div>
-            <Toast messages={eventMessages} messageHandler={setEventMessages}/>
+            <Toast messages={eventMessages} />
         </section>);
 };
 

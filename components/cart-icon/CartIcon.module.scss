@@ -6,9 +6,24 @@
     background-color: $rtr-red;
     padding: 0.25rem;
     width: 1.25rem;
+    min-width: fit-content;
     text-align: center;
     border-radius: 100%;
     font-size: max(1.2rem, 1vw);
     color: $rtr-tan;
     z-index: 10;
+}
+
+.animate {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        filter: blur(2px);
+        opacity: 0.5;
+    }
+    100% {
+    }
+    
 }
