@@ -1,0 +1,72 @@
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+.inputContainer {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  padding-block: 0.5rem;
+}
+.inputContainer label {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  border: solid #99634E 1px;
+  margin-top: 0.25rem;
+  background: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  max-width: 5rem;
+  font-size: max(1.2rem, 1.2vw);
+  color: #405E5C;
+}/*# sourceMappingURL=QuantitySizeInputs.module.css.map */

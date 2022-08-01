@@ -1,0 +1,61 @@
+@import '../../styles/utility/utility.scss';
+
+.container {
+    max-width: fit-content;
+    display: flex;
+    gap: 1.5rem;
+    max-width: 95%;
+    margin-bottom: 2rem;
+}
+
+.img {
+    img {
+        border-radius: 5px;
+    }
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+    h2 {
+        color: $rtr-military-green;
+        margin: 0;
+    }
+    span {
+        font-size: max(1.2rem, 1.2vw);
+        color: $rtr-seagreen;
+    }
+}
+
+.btn {
+    button {
+        font-size: max(1rem, 1vw);
+        padding: 0.4rem 1rem 0.3rem 1rem;
+        min-width: min-content;
+        margin-top: 1rem;
+        color: $rtr-seagreen;
+        border: solid $rtr-seagreen 2px;
+    }
+}
+
+.inputs {
+    color: $rtr-seagreen;
+    label, input {
+        font-size: max(1rem, 1vw) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        gap: 2rem;
+        margin-top: 0.5rem;
+    }
+}

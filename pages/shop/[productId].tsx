@@ -27,7 +27,8 @@ const ProductPage = () => {
 
     if(!product) return <div>Loading...</div>;
     return (
-        <Layout>
+        <Layout metaDescription="All natural tinctures, salves and herbal remedies" 
+            pageTitle={`${product.name} | Root to Rise Botanicals`}>
             <section className={styles.productDetails}>
                 <div className={styles.hero}>
                     <ProductDetails product={product as ProductDto}/>

@@ -7,6 +7,9 @@ import ImageWithFallback from '../image-with-fallback/ImageWithFallback';
 import SpecialChar from '../special-char/SpecialChar';
 import Toast from '../toast/Toast';
 import styles from './ProductDetails.module.css';
+import CartProductDto from '../../dto/CartProductDto';
+import { useRouter } from 'next/router';
+import QuantitySizeInputs from '../quantity-size-inputs/QuantitySizeInputs';
 
 type ProductDetailsProps = {
     product:ProductDto
@@ -16,6 +19,7 @@ const ProductDetails = ({product}:ProductDetailsProps) => {
     const [quantity, setQuantity] = useState<number>(1);
     const [eventMessages, setEventMessages] = useState<ToastMessage[]>([]);
     const cartContext = useContext(CartContext);
+    const router = useRouter();
    
     const handleQuantityChange = (event:any) => {
         const requestedQuantity = event.target.value;
@@ -26,10 +30,19 @@ const ProductDetails = ({product}:ProductDetailsProps) => {
     const handleAddToCart = () => {
         if (typeof window !== 'undefined') {
             let cartJson:string|null = localStorage.getItem("cart");
-            if(!cartJson) return localStorage.setItem("cart",JSON.stringify([{item:product,quantity:quantity}]));
+            let cartItem:CartProductDto = {...product,quantity:quantity};
+            if(!cartJson) return localStorage.setItem("cart",JSON.stringify([cartItem]));
             
-            let cart = JSON.parse(cartJson);
-            cart.push({item:product,quantity:quantity});
+            let cart:CartProductDto[] = JSON.parse(cartJson);
+
+            cart = cart.map(item => {
+                if(item.productId === product.productId) item.quantity += quantity;
+                return item;
+            });
+
+            if(!cart.find(item => item.productId === product.productId))
+                cart.push(cartItem);
+            
             localStorage.setItem("cart",JSON.stringify(cart));
             cartContext.setCart(cart);
             
@@ -47,29 +60,16 @@ const ProductDetails = ({product}:ProductDetailsProps) => {
                 <h1 className={styles.title}>{product.name}</h1>
                 <p className={styles.price}><SpecialChar>$</SpecialChar>{product.price}</p>
                 <p className={styles.description}>{product.description}</p>
-                <div className={styles.inputContainer}>
-                    <label>QUANTITY:
-                        <input 
-                            type="number" 
-                            value={quantity}
-                            className={`${styles.input} specialChar`}
-                            onChange={handleQuantityChange}
-                        />
-                    </label>
-                    <label>SIZE:
-                        <input 
-                            type="text" 
-                            value={product.measurementSize + " " + product.measurementUnit} 
-                            disabled={true}
-                            className={`${styles.input} specialChar`}
-                        />
-                    </label>
-                </div>
+                <QuantitySizeInputs
+                    quantity={quantity}
+                    handleQuantityChange={handleQuantityChange}
+                    product={product}
+                />
                 <div className={styles.btn}>
                     <Button text="Add to cart" onClick={handleAddToCart}/>
                 </div>
                 <div className={styles.btn}>
-                    <Button text="Checkout" onClick={handleAddToCart}/>
+                    <Button text="Checkout" onClick={()=>router.push("/cart")}/>
                 </div>
             </div>
             <div className={styles.imgContainer}>

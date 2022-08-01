@@ -28,7 +28,7 @@ const CartIcon = ({iconDimension}:CartIconProps) => {
                     <SpecialChar>{cartContext.cart.length}</SpecialChar>
                 </div> 
                 : undefined }
-            <Link href={"/coming-soon"} passHref>
+            <Link href={"/cart"} passHref>
                 <a>
                     <Image width={iconDimension} height={iconDimension} src="/icon-cart.svg" alt="Cart Icon."/>
                 </a>

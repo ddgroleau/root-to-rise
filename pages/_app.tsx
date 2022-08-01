@@ -2,19 +2,26 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { createContext, Dispatch, SetStateAction, useState } from 'react';
+import { createContext, Dispatch, SetStateAction, useEffect, useState } from 'react';
 import ErrorBoundary from '../components/error-boundary/ErrorBoundary';
 import ScrollToTop from '../components/scroll-to-top/ScrollToTop';
-import ProductDto from '../dto/ProductDto';
+import CartProductDto from '../dto/CartProductDto';
+
 
 export const CartContext = createContext({
-    cart:[] as ProductDto[],
-    setCart:(()=>{}) as Dispatch<SetStateAction<ProductDto[]>>
+    cart:[] as CartProductDto[],
+    setCart:(()=>{}) as Dispatch<SetStateAction<CartProductDto[]>>
 });
 
-const  MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
     const [queryClient] = useState(() => new QueryClient());
-    const [cart,setCart] = useState<ProductDto[]>([]);
+    const [cart,setCart] = useState<CartProductDto[]>([]);
+
+    useEffect(()=> {
+        let cartJson:string|null = localStorage.getItem("cart");
+        if(cartJson) setCart(JSON.parse(cartJson));
+    },[]);
+
     return (
         <ErrorBoundary>
             <QueryClientProvider client={queryClient}>
