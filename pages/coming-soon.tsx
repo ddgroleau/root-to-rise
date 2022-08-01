@@ -5,7 +5,7 @@ import SpecialChar from '../components/special-char/SpecialChar';
 
 const ComingSoon = () => {
     const styles = {
-        marginTop: "min(20rem,45%)", 
+        marginTop: "min(10rem,25%)", 
         color: "#063723", 
         fontSize: "max(3rem, 2.5vw)", 
         maxWidth: "min(50rem,90%)"

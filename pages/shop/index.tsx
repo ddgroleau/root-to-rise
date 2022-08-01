@@ -90,7 +90,7 @@ const Shop: NextPage = () => {
     return (
         <Layout 
             metaDescription="All natural tinctures, salves and herbal remedies" 
-            pageTitle="Root to Rise Botanicals">
+            pageTitle="Shop | Root to Rise Botanicals">
             <section className={styles.pageContainer}>
                 <ShopFilters 
                     onApplyFilters={applyFilters}

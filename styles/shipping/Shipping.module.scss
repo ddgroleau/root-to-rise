@@ -1,0 +1,51 @@
+@import '../utility/utility.scss';
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    width: 95%;
+    min-height: 80vh;
+    max-height: max-content;
+    margin-bottom: 3rem;
+    h1, h2 {
+        color: $rtr-green-dark;
+        font-weight: 400;
+        font-size: max(1.7rem,1.7vw);
+    }
+    h3 {
+        color: $rtr-green-dark;
+        font-weight: 400;
+        margin: 0;
+    }
+}
+
+.addressSelection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.methodSelection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.addAddress {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 2rem 1rem;
+    border: none;
+    background: none;
+    font-size: max(1.2rem, 1.2vw);
+    max-width: fit-content;
+}
+
+.addAddress:hover {
+    text-decoration: underline;
+    transform: scale(110%);
+    transition: 0.2s transform ease-in-out;
+}

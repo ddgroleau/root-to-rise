@@ -65,7 +65,7 @@ const Cart = () => {
                             </div>
                         </div>
                         <div className={styles.btn}>
-                            <Button text='🔒 CONTINUE TO SHIPPING' onClick={()=>router.push("/coming-soon")} />
+                            <Button text='🔒 CONTINUE TO SHIPPING' onClick={()=>router.push("/shipping")} />
                             <StripeLogo/>
                         </div>
                     </div>

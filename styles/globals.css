@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poly:ital@0;1&display=swap");
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -61,7 +62,7 @@ body {
 }
 
 .specialChar {
-  font-family: serif;
+  font-family: "Poly", serif;
 }
 
 * {

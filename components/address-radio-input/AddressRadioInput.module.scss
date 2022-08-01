@@ -1,0 +1,56 @@
+@import '../../styles/utility/utility.scss';
+
+.container {
+    display: flex;
+    color: $rtr-seagreen;
+    p {
+        margin: 0;
+    }
+    padding: 1rem;
+    border-bottom: solid $rtr-seagreen 1px;
+    max-width: 20rem;
+}
+
+.addressComponents {
+    display: flex;
+    margin-left: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.radio {
+    appearance: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    border: solid $rtr-seagreen 3px;
+    background-color: none;
+    display: grid;
+    place-content: center;
+}
+
+.radio::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.2s opacity ease-in-out;
+    background-color: $rtr-seagreen;
+}
+
+.radio:checked::before {
+    opacity: 1;
+}
+
+.default {
+    color: $rtr-brown-clay;
+    border: solid $rtr-brown-clay 1px;
+    text-align: center;
+    max-width: min-content;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: 'Poly', serif;
+    text-transform: uppercase;
+}
+

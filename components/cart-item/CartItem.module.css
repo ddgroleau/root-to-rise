@@ -74,6 +74,7 @@
 .header h2 {
   color: #7E7F1E;
   margin: 0;
+  width: 14rem;
 }
 .header span {
   font-size: max(1.2rem, 1.2vw);
