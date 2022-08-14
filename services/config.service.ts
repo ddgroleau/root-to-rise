@@ -12,7 +12,10 @@ export default class ConfigService {
     
     public static getVariable(key:string) : string {
         this.verifyKey(key);
-        const host:string = window.origin;
+        let host = 'staging';
+        if(typeof window !== 'undefined') {
+            host = window.origin;
+        }
         if(!host.includes('staging') && host.includes('roottorisebotanicals'))
             return this.retrieveKey(key, this.dependencies.PROD);
 
