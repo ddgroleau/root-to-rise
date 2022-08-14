@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import React, { useContext, useState } from 'react';
 import Button from '../components/button/Button';
 import CartItem from '../components/cart-item/CartItem';
+import CheckoutBreadcrumb from '../components/checkout-breadcrumb/CheckoutBreadcrumb';
 import Layout from '../components/layout/Layout';
 import SpecialChar from '../components/special-char/SpecialChar';
 import StripeLogo from '../components/stripe-logo/StripeLogo';
@@ -65,8 +66,7 @@ const Cart = () => {
                             </div>
                         </div>
                         <div className={styles.btn}>
-                            <Button text='🔒 CONTINUE TO SHIPPING' onClick={()=>router.push("/shipping")} />
-                            <StripeLogo/>
+                            <CheckoutBreadcrumb btnText='🔒 CONTINUE TO SHIPPING' link='/shipping' />
                         </div>
                     </div>
             }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import ProductDto from "../../dto/ProductDto";
+import ConfigService from "../../services/config.service";
 import CartIcon from "../cart-icon/CartIcon";
 import styles from "./Navbar.module.css";
 
@@ -45,7 +46,7 @@ const Navbar = () => {
                     <Link href={"/coming-soon"}>Wholesale</Link>
                     <div className={styles.iconContainer}>
                         <div className={styles.navIcon}>
-                            <Link href={"/coming-soon"} passHref>
+                            <Link href={ConfigService.getVariable("OAUTH2")} passHref>
                                 <a>
                                     <Image width={ICON_DIMENSION} height={ICON_DIMENSION} 
                                         src="/icon-person.svg" alt="Account Icon."/>

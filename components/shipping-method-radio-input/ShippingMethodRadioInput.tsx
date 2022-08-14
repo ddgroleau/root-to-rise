@@ -20,12 +20,12 @@ const ShippingMethodRadioInput = ({method, onChange, isChecked}:ShippingMethodRa
                 onChange={onChange}
                 checked={isChecked}
             />
-            <div>
+            <div className={styles.methodText}>
                 <p className="specialChar">{method.carrier} {method.name} </p>
                 <div>
                     <p className="specialChar">
-                        {method.deliveryRangeLowerBounds} - {method.deliveryRangeUpperBounds} 
-                        {method.deliveryRangeUnits}
+                        {/* eslint-disable-next-line max-len */}
+                        {method.deliveryRangeLowerBounds} - {method.deliveryRangeUpperBounds} {method.deliveryRangeUnits}
                     </p>
                     <p className="specialChar">${method.cost.toFixed(2)}</p>
                 </div>

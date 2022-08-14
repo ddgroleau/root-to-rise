@@ -1,10 +1,12 @@
 export default class ConfigService {
     private static dependencies = {
         DEV: {
-            API:"http://root-to-rise-api-staging.herokuapp.com"
+            API:"http://root-to-rise-api-staging.herokuapp.com",
+            OAUTH2:"http://identity-staging.roottorisebotanicals.com"
         },
         PROD: {
-            API:"http://root-to-rise-api.herokuapp.com"
+            API:"http://root-to-rise-api.herokuapp.com",
+            OAUTH2:"http://identity.roottorisebotanicals.com"
         }
     };
     
@@ -30,5 +32,6 @@ export default class ConfigService {
 }
 
 export enum ConfigVars {
-    API="API"
+    API="API",
+    OAUTH2="OAUTH2"
 }
