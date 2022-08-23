@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ProductDto from '../../dto/ProductDto';
 import { CartContext } from '../../pages/_app';
 import SpecialChar from '../special-char/SpecialChar';
-import styles from './CartIcon.module.css';
+import styles from './CartIcon.module.scss';
 
 type CartIconProps = {
     iconDimension:number;

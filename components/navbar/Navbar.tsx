@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import ProductDto from "../../dto/ProductDto";
 import ConfigService from "../../services/config.service";
 import CartIcon from "../cart-icon/CartIcon";
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
     const [isToggled, setIsToggled] = useState(false);

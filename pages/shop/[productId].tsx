@@ -5,7 +5,7 @@ import Layout from '../../components/layout/Layout';
 import ProductDto from '../../dto/ProductDto';
 import { getProductById } from '../../services/react-query/api.service';
 import ProductDetails from '../../components/product-details/ProductDetails';
-import styles from '../../styles/shop/Shop.module.css';
+import styles from '../../styles/Shop.module.scss';
 import InteractiveDetails from '../../components/interactive-details/InteractiveDetails';
 
 const ProductPage = () => {

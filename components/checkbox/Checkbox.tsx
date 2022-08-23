@@ -1,5 +1,5 @@
 import React, { RefObject } from 'react';
-import styles from './Checkbox.module.css';
+import styles from './Checkbox.module.scss';
 
 type CheckboxProps = {
     label:string;

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import styles from './FeaturedProducts.module.css';
+import styles from './FeaturedProducts.module.scss';
 
 type CardProps = {
     image:string;

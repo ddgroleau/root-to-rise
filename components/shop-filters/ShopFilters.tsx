@@ -7,7 +7,7 @@ import SortParams from '../../models/SortParams';
 import Button from '../button/Button';
 import ChevronButton from '../chevron-button/ChevronButton';
 import FilterOption from '../filter-option/FilterOption';
-import styles from './ShopFilters.module.css';
+import styles from './ShopFilters.module.scss';
 
 type ShopFilterProps = {
     onClearFilters:React.MouseEventHandler;

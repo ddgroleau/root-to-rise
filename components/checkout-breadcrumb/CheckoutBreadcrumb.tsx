@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import Button from '../button/Button';
 import StripeLogo from '../stripe-logo/StripeLogo';
-import styles from './CheckoutBreadcrumb.module.css';
+import styles from './CheckoutBreadcrumb.module.scss';
 
 type CheckoutBreadcrumbProps = {
     btnText:string;

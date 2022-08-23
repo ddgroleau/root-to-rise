@@ -1,4 +1,4 @@
-@import '../../styles/utility/utility.scss';
+@import '../../styles/utility.scss';
 
 @mixin navLink {
     text-decoration: none;
@@ -73,7 +73,7 @@
 
 .navMenuMobile {
     position: fixed;
-    background-color: $rtr-eggshell;
+    background-color: $rtr-green-dark;
     display: flex;
     flex-direction: column;
     left:0;
@@ -89,7 +89,7 @@
 }
 
 .slideDown {
-    animation: slideDown 0.5s ease-in-out;
+    animation: slideDown 0.4s ease-in-out;
 }
 
 .iconContainer {

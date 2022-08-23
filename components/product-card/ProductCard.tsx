@@ -3,7 +3,7 @@ import React from 'react';
 import ProductDto from '../../dto/ProductDto';
 import ImageWithFallback from '../image-with-fallback/ImageWithFallback';
 import SpecialChar from '../special-char/SpecialChar';
-import styles from './ProductCard.module.css';
+import styles from './ProductCard.module.scss';
 
 type ProductCardProps = {
     product:ProductDto;

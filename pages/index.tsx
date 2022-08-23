@@ -3,7 +3,7 @@ import BrandBulletin from '../components/brand-bulletin/BrandBulletin';
 import FeaturedProducts from '../components/featured-products/FeaturedProducts';
 import Hero from '../components/hero/Hero';
 import Layout from '../components/layout/Layout';
-import styles from '../styles/home/Home.module.css';
+import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => {
     return (

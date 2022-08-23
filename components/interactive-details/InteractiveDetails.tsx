@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SpecialChar from '../special-char/SpecialChar';
-import styles from './InteractiveDetails.module.css';
+import styles from './InteractiveDetails.module.scss';
 
 type InteractiveDetailsProps = {
     titles:string[];

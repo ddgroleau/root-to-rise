@@ -6,7 +6,7 @@ import Button from '../button/Button';
 import ImageWithFallback from '../image-with-fallback/ImageWithFallback';
 import SpecialChar from '../special-char/SpecialChar';
 import Toast from '../toast/Toast';
-import styles from './ProductDetails.module.css';
+import styles from './ProductDetails.module.scss';
 import CartProductDto from '../../dto/CartProductDto';
 import { useRouter } from 'next/router';
 import QuantitySizeInputs from '../quantity-size-inputs/QuantitySizeInputs';

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ToastMessage from '../../models/ToastMessage';
-import styles from './Toast.module.css';
+import styles from './Toast.module.scss';
 import ToastItem from './ToastItem';
 
 type ToastProps = {

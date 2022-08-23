@@ -4,7 +4,7 @@ import React from 'react';
 import Button from '../button/Button';
 import ScrollAnimation from '../scroll-animation/ScrollAnimation';
 import { FeaturedProductCard } from './FeaturedProductCard';
-import styles from './FeaturedProducts.module.css';
+import styles from './FeaturedProducts.module.scss';
 
 const FeaturedProducts = () => {
     type Product = {

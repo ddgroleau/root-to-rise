@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler } from 'react';
 import AddressDto from '../../dto/AddressDto';
-import styles from './AddressRadioInput.module.css';
+import styles from './AddressRadioInput.module.scss';
 
 type AddressRadioInputProps = {
     address:AddressDto;

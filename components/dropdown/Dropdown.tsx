@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Dropdown.module.css';
+import styles from './Dropdown.module.scss';
 
 type DropdownProps = {
     defaultValue:number;

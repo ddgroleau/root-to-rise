@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler } from 'react';
 import ProductDto from '../../dto/ProductDto';
-import styles from './QuantitySizeInputs.module.css';
+import styles from './QuantitySizeInputs.module.scss';
 
 type QuantitySizeInputProps = {
     quantity:number;

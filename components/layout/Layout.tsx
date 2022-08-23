@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Navbar from '../navbar/Navbar';
 import SpecialChar from '../special-char/SpecialChar';
-import styles from './Layout.module.css';
+import styles from './Layout.module.scss';
 
 const Layout = ({pageTitle, metaDescription, children}:any) => {
     return (

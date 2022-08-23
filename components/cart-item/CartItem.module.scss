@@ -1,11 +1,11 @@
-@import '../../styles/utility/utility.scss';
+@import '../../styles/utility.scss';
 
 .container {
     max-width: fit-content;
     display: flex;
     gap: 1.5rem;
     max-width: 95%;
-    margin-block: 2rem 4rem;
+    margin-block: 2rem;
 }
 
 .img {
@@ -27,6 +27,7 @@
     h2 {
         color: $rtr-military-green;
         margin: 0;
+        font-weight: 400;
         width: 14rem;
     }
     span {

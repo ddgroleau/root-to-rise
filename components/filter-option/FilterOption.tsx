@@ -1,7 +1,7 @@
 import React from 'react';
 import FilterItem from '../../models/FilterItem';
 import Checkbox from '../checkbox/Checkbox';
-import styles from './FilterOption.module.css';
+import styles from './FilterOption.module.scss';
 
 type FilterOptionProps = {
     items:FilterItem<string>;

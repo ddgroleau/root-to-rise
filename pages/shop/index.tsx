@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { useQuery } from 'react-query';
 import Layout from '../../components/layout/Layout';
-import styles from '../../styles/shop/Shop.module.css';
+import styles from '../../styles/Shop.module.scss';
 import { getAllProducts, getDistinctIngredientNames, getDistinctPropertyNames, getDistinctTraitNames } 
     from '../../services/react-query/api.service';
 import { createRef, RefObject, useEffect, useRef, useState } from 'react';

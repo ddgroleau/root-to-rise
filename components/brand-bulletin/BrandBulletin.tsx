@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import SpecialChar from '../special-char/SpecialChar';
-import styles from './BrandBulletin.module.css';
+import styles from './BrandBulletin.module.scss';
 
 const BrandBulletin = () => {
     return (

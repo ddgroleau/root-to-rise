@@ -6,7 +6,7 @@ import Button from '../button/Button';
 import ImageWithFallback from '../image-with-fallback/ImageWithFallback';
 import QuantitySizeInputs from '../quantity-size-inputs/QuantitySizeInputs';
 import SpecialChar from '../special-char/SpecialChar';
-import styles from './CartItem.module.css';
+import styles from './CartItem.module.scss';
 
 type CartItemProps = {
     item:CartProductDto;

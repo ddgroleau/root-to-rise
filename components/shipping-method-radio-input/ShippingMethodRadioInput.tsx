@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler } from 'react';
 import ShippingMethodDto from '../../dto/ShippingMethodDto';
-import styles from './ShippingMethodRadioInput.module.css';
+import styles from './ShippingMethodRadioInput.module.scss';
 
 type ShippingMethodRadioInputProps = {
     method:ShippingMethodDto;
