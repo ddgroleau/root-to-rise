@@ -1,0 +1,93 @@
+@import '../../styles/utility.scss';
+
+.formOpen {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 15%;
+    left: 1rem;
+    background-color: $rtr-eggshell;
+    z-index: 10;
+    padding: 3rem 4rem;
+    border-radius: 20px;
+    border: solid $rtr-brown-clay 1px;
+    gap: 2rem;
+    width: max(20rem, 40%);
+    max-width: 90%;
+    color: $rtr-brown-clay;
+    font-size: large;
+    h1 {
+        margin: 0;
+        font-weight: 400;
+        font-size: x-large;
+    }
+    select, input, datalist {
+        background-color: $rtr-eggshell;
+        color: $rtr-brown-clay;
+        border: solid $rtr-brown-clay 1px;
+        border-radius: 6px;
+        padding: 0.5rem;
+        text-indent: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    input:focus, select:focus {
+        outline: none;
+        box-shadow: 0 0 1px 1px $rtr-brown-clay;
+    }
+
+    button {
+        color: $rtr-eggshell;
+        background-color: $rtr-brown-clay;
+        border: solid $rtr-brown-clay 2px;
+        border-radius: 30px;
+        padding: 1rem 2rem;
+        font-size: large;
+        text-transform: uppercase;
+        word-spacing: 4px;
+        letter-spacing: 2px;
+    }
+    button:hover {
+        background-color: $rtr-eggshell;
+        color: $rtr-brown-clay;
+        transition: .4s;
+    }
+}
+
+.formClosed {
+    display: none;
+}
+
+.formItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.formDatalist {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.formItemContainer {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+}
+
+.datalistContainer {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.btns {
+    display: flex;
+    gap: 2rem;
+    margin-block: 2rem;
+}
+
+@media (min-width:768px) {
+    .formOpen {
+        left: 20%;
+        top: 20%;
+    }
+}

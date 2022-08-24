@@ -6,14 +6,14 @@ import { createContext, Dispatch, SetStateAction, useEffect, useState } from 're
 import ErrorBoundary from '../components/error-boundary/ErrorBoundary';
 import ScrollToTop from '../components/scroll-to-top/ScrollToTop';
 import CartProductDto from '../dto/CartProductDto';
-
+import { SessionProvider } from "next-auth/react";
 
 export const CartContext = createContext({
     cart:[] as CartProductDto[],
     setCart:(()=>{}) as Dispatch<SetStateAction<CartProductDto[]>>
 });
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
     const [queryClient] = useState(() => new QueryClient());
     const [cart,setCart] = useState<CartProductDto[]>([]);
 
@@ -26,9 +26,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <ErrorBoundary>
             <QueryClientProvider client={queryClient}>
                 <ScrollToTop>
-                    <CartContext.Provider value={{cart:cart,setCart:setCart}}>
-                        <Component {...pageProps} />
-                    </CartContext.Provider>
+                    <SessionProvider session={session}>
+                        <CartContext.Provider value={{cart:cart,setCart:setCart}}>
+                            <Component {...pageProps} />
+                        </CartContext.Provider>
+                    </SessionProvider>
                     <ReactQueryDevtools initialIsOpen={false} />
                 </ScrollToTop>
             </QueryClientProvider>

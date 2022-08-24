@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext, useState } from 'react';
+import AddAddressForm from '../components/add-address-form/AddAddressForm';
 import AddressRadioInput from '../components/address-radio-input/AddressRadioInput';
 import CartItem from '../components/cart-item/CartItem';
 import CheckoutBreadcrumb from '../components/checkout-breadcrumb/CheckoutBreadcrumb';
@@ -158,6 +159,7 @@ const Cart = () => {
                                 </div>
                             </section>
                         </section>
+                        {/* <AddAddressForm isOpen={true} /> */}
                     </section>
             }
         </Layout>
